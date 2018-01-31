@@ -1,10 +1,30 @@
 extends /extends/layout
-include /mixins/sample
-
-block variables
-  - var title = "Web Starter Kit";
-  - var description = "Web Starter Kit";
 
 block content
-  h1 Web Starter Kit
-  +sample("I'm a sample mixin with class modifier!")(class="c-sample--modifier")
+  header.main-header
+    .container
+      .main-header__nav
+        .main-header__brand
+          img.logo(src="images/logo.svg")
+        nav.main-header__menu
+          a.is-active(href="#", data-section="overview") Overview
+          a(href="#", data-section="challenges") Challenges
+          a(href="#", data-section="3") Transparency
+          a(href="#", data-section="4") Transacting
+          a(href="#", data-section="5") The Future
+          a(href="#", data-section="6") About
+        a.button.action(href="#") Download Full Report
+  main.main
+  footer.main-footer
+    .container
+      .main-footer__container
+        .main-footer__content
+          h4 Metrics that move digital forward
+          span.sep |
+          a(href="#") integralads.com
+        .main-footer__social
+          a(href="#").fa.fa-facebook
+          a(href="#").fa.fa-twitter
+          a(href="#").fa.fa-youtube
+          a(href="#").fa.fa-linkedin
+          a(href="#").fa.fa-google

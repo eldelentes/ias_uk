@@ -1,16 +1,16 @@
-////
-/// Global functions
-/// @group Globals
-/// @author Kris Olszewski
-////
+$breakpoints: (
+  "mini": 400px,
+  "small": 560px,
+  "medium":  1024px,
+  "large": 1248px,
+);
 
-/// Get brekpoint from a nested list of breakpoints
-/// ---
-/// @require {variable} $breakpoints - Breakpoints map
-/// @param {String} $orientation - `horizontal` or `vertical`
-/// @param {String} $breakpoint - Breakpoint
-/// @return {Number} Breakpoint value
-
-@function get-breakpoint($orientation, $breakpoint) {
-  @return map-get(map-get($breakpoints, $orientation), $breakpoint);
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max { $width: $width - 1px; }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
 }

@@ -12,27 +12,8 @@
 
 @import "core/reset";
 @import "core/base";
-
-//
-// Objects
-// --------------------------------------------------
-
-@import "objects/sample";
-
-//
-// Utilities
-// --------------------------------------------------
-
-@import "utilities/sample";
+@import "vendor/_grid";
 
 //
 // Components
 // --------------------------------------------------
-
-@import "components/sample";
-
-//
-// Themes
-// --------------------------------------------------
-
-@import "themes/sample";
