@@ -1,2 +1,2 @@
 //=include jquery/dist/jquery.js
-//=include fullpage.js/dist/jquery.fullpage.min.js
+//=include swiper/dist/js/swiper.min.js
