@@ -6,16 +6,16 @@ $(document).ready(function(){
 })
 
 function init(){
-  $('#fullpage').fullpage({
-    verticalCentered: false,
-    afterLoad: function(anchorLink, index){
-      var loadedSection = $(this);
-      $('.effect').addClass('is-active');
+  var mySwiper = new Swiper('.swiper-container', {
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
     },
-    onLeave: function(index, nextIndex, direction){
-      var leavingSection = $(this);
-      $('.effect').removeClass('is-active');
-    }
+  });
+  $('.swiper-slide-active .effect').addClass('is-active');
+  mySwiper.on('transitionEnd', function () {
+    $('.swiper-slide-active .effect').addClass('is-active');
+    $('.swiper-slide-prev .effect, .swiper-slide-next .effect').removeClass('is-active');
   });
 }
 
@@ -26,12 +26,10 @@ pageLink.click(function(){
   var currentSection = $(this).data('section'),
   currentURL = currentSection + '.html';
   $('.main').load(currentURL);
-  console.log(flag);
 });
 
 $( document ).ajaxStart(function() {
   if (flag == true) {
-    $.fn.fullpage.destroy('all');
   }
 });
 
