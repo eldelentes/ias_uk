@@ -1,0 +1,46 @@
+.overview-data {
+  display: block;
+
+  & + & {
+    margin-top: 1rem;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
+
+  &__number {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  &__list {
+    list-style: none;
+    padding-bottom: 1rem;
+  }
+
+  &__sample {
+    @extend .align-vertical;
+    padding-top: 1rem;
+
+    h5 {
+      font-weight: 800;
+      font-size: 0.8rem;
+    }
+  }
+
+  .circle {
+    padding: 0.3rem;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+
+    &.blue { background-color: $color-blue; }
+    &.blue-light { background-color: $color-blue-light; }
+    &.blue-royal { background-color: $color-blue-royal; }
+    &.yellow { background-color: $color-yellow; }
+    &.soft-yellow { background-color: $color-soft-yellow; }
+    &.teal { background-color: $color-teal; }
+  }
+}

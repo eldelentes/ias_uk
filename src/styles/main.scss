@@ -12,8 +12,14 @@
 
 @import "core/reset";
 @import "core/base";
-@import "vendor/_grid";
+@import "vendor/grid";
 
 //
 // Components
 // --------------------------------------------------
+
+@import "components/header";
+@import "components/footer";
+@import "components/country-selector";
+
+@import "pages/overview";

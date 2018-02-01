@@ -5,6 +5,13 @@ $(document).ready(function(){
   $('.main').load('overview.html');
 })
 
+function playChart(){
+  if ( $('.swiper-slide-active .chart').length > 0) {
+    var chart = $('.swiper-slide-active .chart')[0];
+    chart.play();
+  }
+};
+
 function init(){
   var mySwiper = new Swiper('.swiper-container', {
     keyboard: {
@@ -16,7 +23,7 @@ function init(){
   $('.swiper-slide-active .effect').addClass('is-active');
   mySwiper.on('transitionEnd', function () {
     $('.swiper-slide-active .effect').addClass('is-active');
-    $('.swiper-slide-prev .effect, .swiper-slide-next .effect').removeClass('is-active');
+    playChart();
   });
 
   $(document).on( "click", function() {
@@ -46,6 +53,7 @@ $( document ).ajaxStart(function() {
 
 $(document).ajaxComplete(function () {
   init();
+  playChart();
 });
 
 
