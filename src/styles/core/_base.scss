@@ -212,6 +212,9 @@ a {
   }
 }
 
+body.is-right { cursor: url(../images/arrow-right.png) 4 12, auto; }
+body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
+
 .content {
   display: flex;
   align-items: center;
