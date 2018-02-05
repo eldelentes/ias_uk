@@ -10,6 +10,10 @@
 
   &__container {
     @extend .align-extend;
+
+    @include mq(medium) {
+      flex-direction: column;
+    }
   }
 
   &__content {
@@ -29,6 +33,10 @@
   }
 
   &__social {
+    @include mq(medium) {
+      padding-top: 1rem;
+    }
+
     a {
       color: #fff;
     }

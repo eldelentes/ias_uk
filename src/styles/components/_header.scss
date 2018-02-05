@@ -12,6 +12,7 @@
   }
 
   &__menu {
+
     a:not(.button) {
       color: $color-blue;
       font-weight: 500;
@@ -20,6 +21,10 @@
       position: relative;
       font-size: 0.7rem;
       letter-spacing: 1px;
+
+      @include mq(medium) {
+        display: none;
+      }
 
       &:after {
         content: '';

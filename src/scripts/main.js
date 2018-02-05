@@ -1,23 +1,28 @@
+'use strict';
+
 var flag = false;
 var pageLink = $('.main-header__menu a');
+var counter = 0;
+var mySwiper;
+var slides;
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.main').load('overview.html');
-})
+});
 
-function playChart(){
-  if ( $('.swiper-slide-active .chart').length > 0) {
+function playChart() {
+  if ($('.swiper-slide-active .chart').length > 0) {
     var chart = $('.swiper-slide-active .chart')[0];
     chart.play();
   }
 };
 
-function init(){
-  var mySwiper = new Swiper('.swiper-container', {
+function init() {
+  mySwiper = new Swiper('.swiper-container', {
     keyboard: {
       enabled: true,
-      onlyInViewport: false,
-    },
+      onlyInViewport: false
+    }
   });
 
   $('.swiper-slide-active .effect').addClass('is-active');
@@ -26,51 +31,91 @@ function init(){
     playChart();
   });
 
-  $(document).on( "click", function() {
-    if ($('body').hasClass('is-right')) {
-      mySwiper.slideNext();
-    }
-
-    if ($('body').hasClass('is-left')) {
-      mySwiper.slidePrev();
-    }
-
-    nextPage(mySwiper.activeIndex);
-  })
+  slides = $('.swiper-slide').length - 1;
 }
 
-function nextPage(index){
-  var currentIndex = index;
-  var slides = $('.swiper-slide').length - 1;
-  var currentSection = $('page').data('section');
+$(document).on("click", function () {
+  if ($('body').hasClass('is-right')) {
+    mySwiper.slideNext();
+    counter++;
+  }
+
+  if ($('body').hasClass('is-left')) {
+    mySwiper.slidePrev();
+    counter--;
+  }
+  nextPage();
+  prevPage();
+});
+
+function nextPage(index) {
+  if (counter > slides) {
+    loadPage();
+    counter = 0;
+  }
 }
 
-pageLink.click(function(){
+function prevPage(index) {
+
+  if (counter < 0) {
+    returnPage();
+  }
+}
+
+
+function loadPage() {
+  var nextSection = $('.page').data('section') + 1;
+  if (nextSection == 2) {$('.main').load('challenges.html'); }
+  if (nextSection == 3) {$('.main').load('transparency.html'); }
+  if (nextSection == 4) {$('.main').load('transacting.html'); }
+  if (nextSection == 5) {$('.main').load('future.html'); }
+  if (nextSection == 6) {$('.main').load('about.html'); }
+
+  $(pageLink).removeClass('is-active');
+  $('.main-header a[id="' + nextSection + '"]').addClass('is-active');
+}
+
+function returnPage() {
+  var currentSection = $('.page').data('section');
+  if (currentSection == 2) { $('.main').load('overview.html'); }
+  if (currentSection == 3) { $('.main').load('challenges.html'); }
+  if (currentSection == 4) { $('.main').load('transparency.html'); }
+  if (currentSection == 5) { $('.main').load('transacting.html'); }
+  if (currentSection == 6) { $('.main').load('future.html'); }
+
+  $(pageLink).removeClass('is-active');
+}
+
+pageLink.click(function () {
   flag = true;
   $(pageLink).removeClass('is-active');
   $(this).addClass('is-active');
   var currentSection = $(this).data('section'),
-  currentURL = currentSection + '.html';
+      currentURL = currentSection + '.html';
   $('.main').load(currentURL);
 });
 
-$( document ).ajaxStart(function() {
+$(document).ajaxStart(function () {
   if (flag == true) {
+    mySwiper.destroy();
   }
 });
 
 $(document).ajaxComplete(function () {
   init();
   playChart();
+  mySwiper.update();
 });
 
+
+// Mouse Arrow
 
 var windowTop = 58;
 var windowBottom = $(window).height() - 58;
 var windowWidth = $(window).width();
 var windowHalf = windowWidth / 2;
 
-$(document).mousemove(function( event ) {
+$(document).mousemove(function (event) {
   var mouseX = event.pageX;
   var mouseY = event.pageY;
   if (mouseX < windowHalf && mouseY > windowTop && mouseY < windowBottom) {
@@ -84,6 +129,6 @@ $(document).mousemove(function( event ) {
     $('body').addClass('is-right');
     $('body').removeClass('is-left');
   } else {
-   $('body').removeClass('is-right');
+    $('body').removeClass('is-right');
   }
 });
