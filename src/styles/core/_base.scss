@@ -11,6 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   min-height: 100vh;
+  font-variant-numeric: lining-nums
 }
 
 img {
@@ -49,19 +50,34 @@ a {
 
 .button {
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 800;
   transition: all 0.2s ease;
 
   &.action {
     color: #fff;
     background: $color-red;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 2px;
     font-size: 0.8rem;
 
     &:hover {
       background: darken($color-red, 20%);
     }
+  }
+
+  &.white {
+    background: #fff;
+    color: $color-blue;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+  }
+}
+
+.buttons {
+  .button + .button {
+    margin-left: 1rem;
   }
 }
 
@@ -74,7 +90,9 @@ a {
   &.red { background: $color-red; }
   &.blue { background: $color-blue; }
   &.blue-light { background: $color-blue-light; }
+  &.blue-royal { background: $color-blue-royal; }
   &.teal { background: $color-teal; }
+  &.yellow { background: $color-yellow; }
   height: 100vh;
   width: 100%;
 }
@@ -92,7 +110,7 @@ a {
   }
 
   &-subtitle {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 800;
     line-height: 1.2em;
     display: inline-block;
@@ -162,7 +180,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   &__title {
     font-size: 0.9rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 900;
     margin-bottom: 2rem;
   }
 
@@ -183,7 +201,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     }
 
     h4 {
-      font-weight: 600;
+      font-weight: 800;
     }
   }
 
@@ -199,6 +217,33 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     &.blue { background-color: $color-blue; }
     &.white { background-color: #fff; }
     &.blue-royal { background-color: $color-blue-royal; }
+    &.teal { background-color: $color-teal; }
+    &.yellow { background-color: $color-yellow; }
+  }
+}
+
+.number-item {
+  @extend .align-extend;
+  &__number {
+    @extend .align-center;
+    background-color: $color-red;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    flex: 0 0 2rem;
+    margin-right: 1rem;
+  }
+
+  & + & {
+    padding-top: 4rem;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 1rem;
   }
 }
 

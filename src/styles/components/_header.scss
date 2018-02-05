@@ -1,6 +1,6 @@
 .main-header {
   background: #fff;
-  padding: 1rem 0;
+  padding: 1.1rem 0;
   position: absolute;
   width: 100%;
   top: 0;
@@ -18,7 +18,7 @@
       text-transform: uppercase;
       font-weight: 900;
       position: relative;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       letter-spacing: 1px;
 
       &:after {
@@ -42,11 +42,15 @@
     }
 
     a + a {
-      margin-left: 1rem;
+      margin-left: 2rem;
     }
   }
 
+  .button {
+    margin-left: 2.5rem;
+  }
+
   &__brand {
-    width: 150px;
+    width: 120px;
   }
 }

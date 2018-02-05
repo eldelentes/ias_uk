@@ -34,7 +34,15 @@ function init(){
     if ($('body').hasClass('is-left')) {
       mySwiper.slidePrev();
     }
+
+    nextPage(mySwiper.activeIndex);
   })
+}
+
+function nextPage(index){
+  var currentIndex = index;
+  var slides = $('.swiper-slide').length - 1;
+  var currentSection = $('page').data('section');
 }
 
 pageLink.click(function(){
