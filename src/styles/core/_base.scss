@@ -133,6 +133,13 @@ a {
     line-height: 1.2em;
     display: inline-block;
 
+    &--big {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1em;
+      display: inline-block;
+    }
+
     @include mq(medium) {
       font-size: 1.2rem;
     }
