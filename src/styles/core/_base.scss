@@ -134,10 +134,14 @@ a {
     display: inline-block;
 
     &--big {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 800;
       line-height: 1em;
       display: inline-block;
+
+      @include mq(medium) {
+        font-size: 1.2rem;
+      }
     }
 
     @include mq(medium) {
@@ -194,22 +198,32 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 .foot-note {
   position: absolute;
   bottom: 0rem;
-  width: 25rem;
+  width: 30%;
 
   @include mq(medium) {
     position: static;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   &__icon {
     width: 3rem;
     padding-bottom: 1rem;
     display: block;
+
+    @include mq(medium) {
+      width: 2rem;
+      padding-bottom: 0.5rem;
+    }
   }
 
   p {
     line-height: 1.6em;
     font-weight: 500;
+
+    @include mq(medium) {
+      font-size: 0.9rem;
+    }
   }
 }
 
