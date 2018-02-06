@@ -6,6 +6,10 @@
     position: static;
   }
 
+  @include mqh(700px) {
+    position: static;
+  }
+
  &__label {
   color: $color-blue;
   font-weight: 900;

@@ -2,6 +2,7 @@ $breakpoints: (
   "mini": 400px,
   "small": 900px,
   "medium":  1124px,
+  "big":  1220px,
   "large": 1248px,
 );
 
@@ -12,5 +13,11 @@ $breakpoints: (
     @media only screen and (#{$type}-width: $width) {
       @content;
     }
+  }
+}
+
+@mixin mqh($height) {
+  @media screen and (max-height: $height) {
+    @content;
   }
 }
