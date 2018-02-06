@@ -11,7 +11,8 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   min-height: 100vh;
-  font-variant-numeric: lining-nums
+  font-variant-numeric: lining-nums;
+  overflow: hidden;
 }
 
 img {
@@ -86,7 +87,7 @@ a {
 }
 
 .spacer {
-  height: 1.5rem;
+  height: 2rem;
   width: 100%;
 }
 
@@ -100,12 +101,14 @@ a {
   height: 100vh;
   width: 100%;
 
-  @include mq(medium) {
+  @include mq(small) {
     height: auto;
   }
 }
 
 .main {
+  transform: translateY(50px);
+
   @include mqh(700px) {
     height: 89vh;
     overflow: hidden;
@@ -139,7 +142,7 @@ a {
   }
 
   &-subtitle {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 800;
     line-height: 1.2em;
     display: inline-block;
@@ -177,7 +180,7 @@ a {
   &-blue { color: $color-blue; }
 
   &-body {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.8em;
     font-weight: 500;
 
@@ -196,10 +199,10 @@ a {
 }
 
 .strip {
-  height: 6px;
-  width: 70px;
+  height: 5px;
+  width: 50px;
   display: block;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 
   &.blue {
     background: $color-blue;
@@ -218,7 +221,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   // max-height: calc(100vh - 200px);
   max-width: 100vw;
   position: relative;
-  padding-top: 120px;
+  padding-top: 60px;
 
   @include mq(medium) {
     min-height: auto !important;
@@ -228,7 +231,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
 .foot-note {
   position: absolute;
-  bottom: 0rem;
+  bottom: 1rem;
   padding-bottom: 1rem;
 
   @include mq(medium) {
@@ -256,7 +259,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   p {
     line-height: 1.6em;
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     width: 30vw;
 
     @include mq(medium) {
@@ -272,7 +275,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   pointer-events: none;
 
   &__title {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     text-align: center;
     font-weight: 900;
     margin-bottom: 2rem;

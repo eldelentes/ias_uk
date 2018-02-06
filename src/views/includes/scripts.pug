@@ -2,8 +2,10 @@
 case env
   when "dev"
     script(src="/vendors/bundle.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Flowtype.js/1.1.0/flowtype.min.js")
     script(src="/scripts/main.js")
   when "stage"
   when "prod"
     script(src="/vendors/bundle.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Flowtype.js/1.1.0/flowtype.min.js")
     script(src="/scripts/main.min.js")

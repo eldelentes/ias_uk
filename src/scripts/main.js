@@ -35,6 +35,8 @@ function init() {
 }
 
 $(document).on("click", function () {
+  console.log(counter);
+
   if ($('body').hasClass('is-right')) {
     mySwiper.slideNext();
     counter++;
@@ -51,7 +53,6 @@ $(document).on("click", function () {
 function nextPage(index) {
   if (counter > slides) {
     loadPage();
-    counter = 0;
   }
 }
 
@@ -62,7 +63,6 @@ function prevPage(index) {
   }
 }
 
-
 function loadPage() {
   var nextSection = $('.page').data('section') + 1;
   if (nextSection == 2) {$('.main').load('challenges.html'); }
@@ -72,7 +72,8 @@ function loadPage() {
   if (nextSection == 6) {$('.main').load('about.html'); }
 
   $(pageLink).removeClass('is-active');
-  $('.main-header a[id="' + nextSection + '"]').addClass('is-active');
+  // $('.main-header a[id="' + nextSection + '"]').addClass('is-active');
+  counter = 0;
 }
 
 function returnPage() {
@@ -105,6 +106,10 @@ $(document).ajaxComplete(function () {
   init();
   playChart();
   mySwiper.update();
+
+  var currentPage = $('.page').data('name');
+  console.log(currentPage);
+  $('.main-header a[data-section="' + currentPage + '"]').addClass('is-active');
 });
 
 
