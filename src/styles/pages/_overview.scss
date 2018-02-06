@@ -6,7 +6,7 @@
   }
 
   &__title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 900;
   }
 
@@ -26,7 +26,7 @@
 
     h5 {
       font-weight: 800;
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
 
@@ -34,7 +34,7 @@
     padding: 0.3rem;
     display: inline-block;
     border-radius: 50%;
-    margin-right: 0.5rem;
+    margin-right: 1.2rem;
 
     &.blue { background-color: $color-blue; }
     &.blue-light { background-color: $color-blue-light; }
