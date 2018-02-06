@@ -63,7 +63,7 @@ a {
     background: $color-red;
     padding: 0.5rem 1rem;
     border-radius: 2px;
-    font-size: 0.8rem;
+    font-size: 0.6em;
 
     &:hover {
       background: darken($color-red, 20%);
@@ -74,7 +74,7 @@ a {
     background: #fff;
     color: $color-blue;
     border-radius: 2px;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     padding: 0.5rem 1rem;
     letter-spacing: 1px;
   }
@@ -130,29 +130,29 @@ a {
   }
 
   &-title {
-    font-size: 4rem;
+    font-size: 4em;
     font-weight: 900;
     display: inline-block;
     white-space: nowrap;
 
     @include mq(medium) {
       white-space: normal;
-      font-size: 2rem;
+      font-size: 2em;
     }
   }
 
   &-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.4em;
     font-weight: 800;
     line-height: 1.2em;
     display: inline-block;
 
     @include mqh(700px) {
-      font-size: 1.4rem;
+      font-size: 1.4em;
     }
 
     @include mqh(700px) {
-      font-size: 1.4rem;
+      font-size: 1.4em;
     }
 
     &--big {
@@ -166,12 +166,12 @@ a {
       }
 
       @include mq(big) {
-        font-size: 2.4rem;
+        font-size: 2.4em;
       }
     }
 
     @include mq(medium) {
-      font-size: 1.2rem;
+      font-size: 1.2em;
     }
 
   }
@@ -180,18 +180,18 @@ a {
   &-blue { color: $color-blue; }
 
   &-body {
-    font-size: 0.8rem;
+    font-size: 1em;
     line-height: 1.8em;
     font-weight: 500;
 
     @include mq(big) {
-      font-size: 0.8rem;
+      font-size: 0.8em;
     }
 
     p {
       margin-bottom: 1rem;
       &.small {
-        font-size: 0.8rem;
+        font-size: 0.8em;
         margin-bottom: 0.5rem;
       }
     }
@@ -259,7 +259,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   p {
     line-height: 1.6em;
     font-weight: 500;
-    font-size: 0.7rem;
+    font-size: 0.7em;
     width: 30vw;
 
     @include mq(medium) {
@@ -275,7 +275,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   pointer-events: none;
 
   &__title {
-    font-size: 1.1rem;
+    font-size: 1.1em;
     text-align: center;
     font-weight: 900;
     margin-bottom: 2rem;
@@ -327,7 +327,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     background-color: $color-red;
     color: #fff;
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -341,7 +341,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
   p {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1em;
   }
 }
 
