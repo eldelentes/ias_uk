@@ -46,6 +46,10 @@
     @extend .align-vertical;
     padding-top: 1rem;
 
+    @include mqh(700px) {
+      padding-top: 0.5rem;
+    }
+
     h5 {
       font-weight: 800;
       font-size: 1rem;
