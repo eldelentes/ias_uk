@@ -9,13 +9,17 @@
   z-index: 1;
 
   @include mqh(700px) {
-    position: static;
+    position: relative;
+  }
+
+  @include mq(small) {
+    position: relative;
   }
 
   &__container {
     @extend .align-extend;
 
-    @include mq(medium) {
+    @include mq(small) {
       flex-direction: column;
     }
   }
@@ -37,7 +41,7 @@
   }
 
   &__social {
-    @include mq(medium) {
+    @include mq(small) {
       padding-top: 1rem;
     }
 

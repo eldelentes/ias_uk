@@ -142,5 +142,5 @@ $(document).mousemove(function (event) {
 $('body').flowtype({
   fontRatio : 100,
   minFont : 14,
-  maxFont : 40
+  maxFont : 52
 });

@@ -13,6 +13,10 @@ body {
   min-height: 100vh;
   font-variant-numeric: lining-nums;
   overflow: hidden;
+
+  @include mq(small) {
+    overflow: auto;
+  }
 }
 
 img {
@@ -63,7 +67,7 @@ a {
     background: $color-red;
     padding: 0.5rem 1rem;
     border-radius: 2px;
-    font-size: 0.6em;
+    font-size: 0.8em;
 
     &:hover {
       background: darken($color-red, 20%);
@@ -74,15 +78,16 @@ a {
     background: #fff;
     color: $color-blue;
     border-radius: 2px;
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding: 0.5rem 1rem;
     letter-spacing: 1px;
+    font-weight: 900;
   }
 }
 
 .buttons {
   .button + .button {
-    margin-left: 1rem;
+    margin-left: 2rem;
   }
 }
 
@@ -142,10 +147,12 @@ a {
   }
 
   &-subtitle {
-    font-size: 1.4em;
+    font-size: 1.6em;
     font-weight: 800;
-    line-height: 1.2em;
+    line-height: 1.4em;
     display: inline-block;
+
+    margin-top: 2em;
 
     @include mqh(700px) {
       font-size: 1.4em;
@@ -156,7 +163,7 @@ a {
     }
 
     &--big {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       font-weight: 900;
       line-height: 1em;
       display: inline-block;
@@ -191,8 +198,8 @@ a {
     p {
       margin-bottom: 1rem;
       &.small {
-        font-size: 0.8em;
-        margin-bottom: 0.5rem;
+        font-size: 0.9em;
+        margin-bottom: 1em;
       }
     }
   }
@@ -221,7 +228,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   // max-height: calc(100vh - 200px);
   max-width: 100vw;
   position: relative;
-  padding-top: 60px;
+  padding-top: 2.3em;
 
   @include mq(medium) {
     min-height: auto !important;
@@ -231,8 +238,8 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
 .foot-note {
   position: absolute;
-  bottom: 1rem;
-  padding-bottom: 1rem;
+  bottom: 0;
+  padding-bottom: 0.5em;
 
   @include mq(medium) {
     position: static;
@@ -259,7 +266,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   p {
     line-height: 1.6em;
     font-weight: 500;
-    font-size: 0.7em;
+    font-size: 0.8em;
     width: 30vw;
 
     @include mq(medium) {
@@ -269,7 +276,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 }
 
 .chart {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   display: block;
   pointer-events: none;
@@ -278,7 +285,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     font-size: 1.1em;
     text-align: center;
     font-weight: 900;
-    margin-bottom: 2rem;
+    padding-top: 6em;
   }
 
   &__note {
@@ -341,7 +348,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
   p {
     font-weight: 700;
-    font-size: 1em;
+    font-size: 1.1em;
   }
 }
 
