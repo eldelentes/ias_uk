@@ -117,7 +117,7 @@ $(document).ajaxComplete(function () {
 
 var windowTop = 58;
 var windowBottom = $(window).height() - 58;
-var windowWidth = $(window).width();
+var windowWidth = $(window).width();70
 var windowHalf = windowWidth / 2;
 
 $(document).mousemove(function (event) {
@@ -136,4 +136,11 @@ $(document).mousemove(function (event) {
   } else {
     $('body').removeClass('is-right');
   }
+});
+
+
+$('body').flowtype({
+  fontRatio : 100,
+  minFont : 14,
+  maxFont : 52
 });

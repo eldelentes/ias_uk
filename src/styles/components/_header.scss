@@ -22,7 +22,7 @@
       font-size: 0.6rem;
       letter-spacing: 1px;
 
-      @include mq(medium) {
+      @include mq(small) {
         display: none;
       }
 
@@ -47,12 +47,12 @@
     }
 
     a + a {
-      margin-left: 2rem;
+      margin-left: 3em;
     }
   }
 
   .button {
-    margin-left: 2.5rem;
+    margin-left: 2.5em;
   }
 
   &__brand {
