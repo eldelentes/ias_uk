@@ -297,6 +297,8 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    transform: translateY(-4em) !important;
   }
 
   &__note-item {
