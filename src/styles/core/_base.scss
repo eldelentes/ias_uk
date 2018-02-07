@@ -154,7 +154,7 @@ a {
     line-height: 1.3em;
     display: inline-block;
     margin-top: 2.5em;
-    width: 95%;
+    width: 90%;
 
     // @include mqh(700px) {
     //   font-size: 1.4em;
@@ -361,6 +361,10 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     font-weight: 700;
     font-size: 1.1em;
   }
+}
+
+.future-title {
+  height: 12em;
 }
 
 .effect {
