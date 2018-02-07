@@ -35,7 +35,6 @@ function init() {
 }
 
 $(document).on("click", function () {
-  console.log(counter);
 
   if ($('body').hasClass('is-right')) {
     mySwiper.slideNext();
@@ -108,7 +107,6 @@ $(document).ajaxComplete(function () {
   mySwiper.update();
 
   var currentPage = $('.page').data('name');
-  console.log(currentPage);
   $('.main-header a[data-section="' + currentPage + '"]').addClass('is-active');
 });
 

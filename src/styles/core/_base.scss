@@ -286,7 +286,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   pointer-events: none;
 
   &__title {
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-align: center;
     font-weight: 900;
     padding-top: 6em;
@@ -303,7 +303,8 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     align-items: center;
     justify-content: center;
     position: relative;
-    transform: translateY(-4em) !important;
+    transform: translateY(-5em) !important;
+    z-index: 2;
   }
 
   &__note-item {

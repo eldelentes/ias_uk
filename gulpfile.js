@@ -263,7 +263,9 @@ gulp.task('styles', () => gulp
   }))
   // Add vendor prefixes
   .pipe(postcss([
-    autoprefixer,
+    autoprefixer({
+      browsers: ['> 5%']
+    })
   ]))
   // Save unminified file
   .pipe(gulp.dest(`${path.build}/styles`))
