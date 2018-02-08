@@ -32,6 +32,11 @@
     a {
       font-weight: 800;
       color: #fff;
+
+      @include mq(small) {
+        font-size: 0.6rem;
+        font-weight: 800;
+      }
     }
   }
 
