@@ -284,6 +284,8 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   margin: 0 auto;
   display: block;
   pointer-events: none;
+  max-height: 28em;
+  padding: 2em 0;
 
   &__title {
     font-size: 1.2em;
@@ -303,7 +305,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     align-items: center;
     justify-content: center;
     position: relative;
-    transform: translateY(-5em) !important;
+    // transform: translateY(-5em) !important;
     z-index: 2;
   }
 
