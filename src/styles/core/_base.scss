@@ -237,10 +237,10 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   position: relative;
   padding-top: 65px;
 
-  @include mq(medium) {
-    min-height: auto !important;
-    height: auto;
-  }
+  // @include mq(medium) {
+  //   min-height: auto !important;
+  //   height: auto;
+  // }
 }
 
 .foot-note {
@@ -250,9 +250,9 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   width: 24vw;
 
 
-  @include mqh(500px) {
-    position: static;
-  }
+  // @include mqh(500px) {
+  //   position: static;
+  // }
 
   &__icon {
     width: 2em;
