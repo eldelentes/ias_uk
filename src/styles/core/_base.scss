@@ -452,7 +452,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 @media only screen and (max-device-width: 680px) and (orientation: landscape) {
   .main-footer {
     position: absolute !important;
-    padding: 0.2rem 0 !important;
+    padding: 0.4rem 0 !important;
   }
 
   .main-footer__container {
@@ -476,17 +476,20 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   }
 
   .overview .text-subtitle--big {
-    font-size: 1.2em;
+    font-size: 1.6em;
   }
 
-  .overview-data__title,
   .overview-data__number,
   .overview-data__sample h5 {
     font-size: 0.5rem !important;
   }
 
+  .overview-data__title {
+   font-size: 0.7rem !important;
+  }
+
   .overview-data__sample {
-    padding-top: 3px !important;
+    padding-top: 6px !important;
   }
 
   .overview-data .circle {
@@ -500,24 +503,26 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
   .chart {
     height: 15em;
+    width: 100%;
   }
 
   .text-body {
-    ont-size: 0.8em;
+    font-size: 0.7em;
     line-height: 1.2;
   }
 
 
   .text-subtitle {
-    font-size: 0.7em;
+    font-size: 1em;
     margin-top: 1.5em;
+    width: 100%;
   }
 
   .strip {
+    margin-top: 0.6em;
     height: 2px;
-    width: 40px;
-    display: block;
-    margin-top: 0.5em;
+    width: 25px;
+    margin-bottom: 1em;
   }
 
   .foot-note__icon {
@@ -527,12 +532,12 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   .foot-note {
     width: 30vw;
     position: absolute !important;
-    bottom: 60px;
+    bottom: 80px;
   }
 
   .chart__title {
     font-size: 0.7em;
-    padding-top: 0.3em;
+    padding-top: 10vh;
   }
 
   .foot-note p {
@@ -547,7 +552,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
   .content {
     height: 100vh !important;
-    padding-top: 50px;
+    padding-top: 34px;
   }
 
   .main-header {
@@ -557,10 +562,28 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   .main-header__brand {
     width: 80px;
   }
+
+  .col-md-6 {
+    width: 50vw;
+  }
+
+  .col-md-4 {
+    width: 45vw;
+  }
+
+  .col-md-8:not(.text-body) {
+    width: 55vw;
+  }
 }
 
 @media only screen and (max-device-width: 570px) and (orientation: landscape) {
   .foot-note {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (max-height: 900px) {
+  .chart {
+    max-height: 17em;
   }
 }
