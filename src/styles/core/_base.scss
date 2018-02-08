@@ -285,7 +285,15 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   display: block;
   pointer-events: none;
   max-height: 28em;
-  padding: 2em 0;
+  margin: 2em 0;
+
+  @include mqh(750px) {
+    max-height: 23em;
+  }
+
+  @include mqh(650px) {
+    max-height: 20em;
+  }
 
   &__title {
     font-size: 1.2em;
