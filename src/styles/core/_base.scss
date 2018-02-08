@@ -287,8 +287,12 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   max-height: 28em;
   margin: 2em 0;
 
-  @include mqh(750px) {
+  @include mqh(760px) {
     max-height: 23em;
+  }
+
+  &.height {
+    max-height: 26em;
   }
 
   @include mqh(650px) {
