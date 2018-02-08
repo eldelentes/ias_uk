@@ -4,6 +4,8 @@ block content
   header.main-header
     .container
       .main-header__nav
+        a.close-menu
+          img.logo(src="images/close.svg")
         .main-header__brand
           img.logo(src="images/logo.svg")
         nav.main-header__menu
@@ -14,8 +16,13 @@ block content
           a(href="javascript:;", id="5" ,data-section="future") The Future
           a(href="javascript:;", id="6" ,data-section="about") About
           a.button.action(href="images/IAS_Web_Enero_30_PDF.pdf", target="_blank") Download Full Report
-          a.button.fa.fa-list
+        nav.mobile-nav
+          a.button.action(href="images/IAS_Web_Enero_30_PDF.pdf", target="_blank") Download Full Report
+          a.toggle
+            img.logo(src="images/toggle.svg")
   main.main
+  .responsive-mask
+    img(src="images/mobile.svg")
   footer.main-footer
     .container
       .main-footer__container

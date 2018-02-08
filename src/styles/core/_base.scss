@@ -76,6 +76,10 @@ a {
     &:hover {
       background: darken($color-red, 20%);
     }
+
+    @include mq(small) {
+      padding: 0.3rem 1em;
+    }
   }
 
   &.white {
@@ -445,6 +449,29 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
       height: 25vh !important;
       padding-top: 2em;
     }
+  }
+
+  .responsive-mask {
+    display: flex !important;
+  }
+}
+
+.responsive-mask {
+  background: rgba($color-blue, 0.9);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: none;
+
+  img {
+    width: 80%;
   }
 }
 

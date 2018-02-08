@@ -13,6 +13,40 @@
 
   &__menu {
 
+    @include mq(small) {
+      background: rgba($color-blue, 0.9);
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      z-index: 100;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: none;
+
+      .button {
+        display: none;
+      }
+
+      a:not(.button) {
+        color: #fff !important;
+        font-size: 1.5em !important;
+        margin: 0.5em 0;
+
+        &:after {
+          display: none !important;
+        }
+
+        &.is-active {
+          bottom: 0;
+        }
+      }
+      // display: none;
+    }
+
     a:not(.button) {
       color: $color-blue;
       font-weight: 500;
@@ -21,10 +55,6 @@
       position: relative;
       font-size: 0.6rem;
       letter-spacing: 1px;
-
-      @include mq(small) {
-        display: none;
-      }
 
       &:after {
         content: '';
@@ -58,4 +88,38 @@
   &__brand {
     width: 120px;
   }
+}
+
+.mobile-nav {
+  display: none;
+
+  @include mq(small) {
+    display: flex;
+    align-items: center;
+  }
+
+  .toggle {
+    width: 30px;
+    margin-left: 1em;
+  }
+}
+
+.close-menu {
+  display: none;
+
+  @include mq(small) {
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    width: 2em;
+    z-index: 101;
+  }
+
+  &.is-active {
+    display: inline-block;
+  }
+}
+
+.main-header__menu.is-active {
+  display: flex;
 }

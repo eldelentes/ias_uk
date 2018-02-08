@@ -142,3 +142,15 @@ $('body').flowtype({
   minFont : 12,
   maxFont : 52
 });
+
+$('.toggle').click(function(e){
+  e.preventDefault;
+  $('.main-header__menu').addClass('is-active');
+  $('.close-menu').addClass('is-active');
+})
+
+$('.close-menu').click(function(e){
+  e.preventDefault;
+  $('.main-header__menu').removeClass('is-active');
+  $(this).removeClass('is-active');
+})
