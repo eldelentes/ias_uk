@@ -370,7 +370,11 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   }
 
   & + & {
-    padding-top: 4rem;
+    padding-top: 4em;
+
+    @include mqh(600px) {
+      padding-top: 2em;
+    }
   }
 
   p {
@@ -379,8 +383,8 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
   }
 }
 
-.future-title {
-  height: 12em;
+.future-text {
+  margin-top: 1rem;
 }
 
 .effect {
