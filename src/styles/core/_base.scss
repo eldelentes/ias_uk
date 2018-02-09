@@ -435,10 +435,15 @@ a {
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 99;
 
   img {
     height: 2em;
   }
+}
+
+.swiper-button-disabled {
+  opacity: 0;
 }
 
 .swiper-next { right: 0.5em; }

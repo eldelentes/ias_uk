@@ -122,3 +122,5 @@ mySwiper = new Swiper('.swiper-container', {
 });
 
 init();
+
+console.log(mySwiper.navigation.nextEl);
