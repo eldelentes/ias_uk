@@ -271,6 +271,10 @@ a {
 }
 
 
+.chart-img {
+  display: none;
+}
+
 
 .chart {
   // width: 100%;
@@ -504,6 +508,11 @@ a {
   .overview-data { padding-left: 1rem; }
 
   .chart {
+    display: none;
+  }
+
+  .chart-img {
+    display: block;
     height: 15em;
     width: 100%;
     margin: 0.4em 0;
