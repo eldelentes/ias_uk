@@ -408,7 +408,7 @@ a {
 }
 
 .responsive-mask {
-  background: rgba($color-blue, 0.9);
+  background: rgba($color-blue, 1);
   position: fixed;
   left: 0;
   bottom: 0;
@@ -428,60 +428,34 @@ a {
 
 
 @media only screen and (max-device-width: 680px) and (orientation: landscape) {
-  .main-footer {
-    position: absolute !important;
-    padding: 0.4rem 0 !important;
-  }
+  .main-footer { padding: 0.4rem 0 !important; }
 
-  .main-footer__container {
-    flex-direction: row !important;
-  }
+  .page { height: calc(100vh - 56px); }
 
-  .page {
-    height: 100vh;
-  }
+  .spacer { height: 0.4em; }
 
-  .main-footer__social {
-    padding: 0 !important;
-  }
-
-  .row {
-    flex-wrap: nowrap !important;
-  }
-
-  .spacer {
-    height: 0.4em;
-  }
-
-  .overview .text-subtitle--big {
-    font-size: 1.6em;
-  }
+  .overview .text-subtitle--big { font-size: 1.6em; }
 
   .overview-data__number,
   .overview-data__sample h5 {
     font-size: 0.5rem !important;
   }
 
-  .overview-data__title {
-   font-size: 0.7rem !important;
-  }
+  .overview-data__title { font-size: 0.7rem !important; }
 
-  .overview-data__sample {
-    padding-top: 6px !important;
-  }
+  .overview-data__sample { padding-top: 6px !important; }
 
   .overview-data .circle {
     padding: 0.2rem !important;
     margin-right: 0.3rem !important;
   }
 
-  .overview-data {
-    padding-left: 1rem;
-  }
+  .overview-data { padding-left: 1rem; }
 
   .chart {
     height: 15em;
     width: 100%;
+    margin: 0.4em 0;
   }
 
   .text-body {
@@ -509,7 +483,6 @@ a {
 
   .foot-note {
     width: 30vw;
-    position: absolute !important;
     bottom: 80px;
   }
 
@@ -524,21 +497,12 @@ a {
     font-size: 0.6em;
   }
 
-  .chart {
-    margin: 0.4em 0;
-  }
-
-  .content {
-    height: 100vh !important;
-    padding-top: 34px;
-  }
-
   .main-header {
     padding: 0.4em 0 !important;
   }
 
   .main-header__brand {
-    width: 80px;
+    width: 80px !important;
   }
 
   .col-md-6 {

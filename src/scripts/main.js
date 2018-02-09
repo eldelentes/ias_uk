@@ -82,13 +82,19 @@ $('body').flowtype({
 
 $('.toggle').click(function(e){
   e.preventDefault;
-  $('.main-header__menu').addClass('is-active');
+  $('.main-header__menu').addClass('is-responsive');
   $('.close-menu').addClass('is-active');
+})
+
+pageLink.click(function(e){
+  console.log("log");
+  $('.main-header__menu').removeClass('is-responsive');
+  $('.close-menu').removeClass('is-active');
 })
 
 $('.close-menu').click(function(e){
   e.preventDefault;
-  $('.main-header__menu').removeClass('is-active');
+  $('.main-header__menu').removeClass('is-responsive');
   $(this).removeClass('is-active');
 })
 
