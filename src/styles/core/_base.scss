@@ -21,13 +21,6 @@ body {
   @include mqh(600px) {
     font-size: 12 !important;
   }
-
-  &.overview,
-  &.about { background: $color-red; }
-  &.challenges { background: $color-blue-light; }
-  &.transacting { background: $color-blue-royal; }
-  &.transparency { background: $color-teal; }
-  &.future { background: $color-yellow; }
 }
 
 img {
@@ -113,6 +106,35 @@ a {
   width: 100%;
 }
 
+.main {
+  &.overview,
+  &.about { background: $color-red; }
+  &.challenges { background: $color-blue-light; }
+  &.transacting { background: $color-blue-royal; }
+  &.transparency { background: $color-teal; }
+  &.future { background: $color-yellow; }
+}
+
+.safari .main {
+  &.overview { background: #ff6251; }
+  &.challenges { background: #c9e3e5; }
+  &.transparency { background: #00d7c5; }
+  &.transacting { background: #637cff; }
+  &.future { background: #ffd726;}
+}
+
+.firefox .main {
+  &.overview { background: #fb4147; }
+  &.challenges { background: #cde9e6; }
+  &.transparency { background: #07f1c5; }
+  &.transacting { background: #5865ff; }
+  &.future { background: #ffe12b;}
+}
+
+.firefox .chart {
+  filter: contrast(110%);
+}
+
 .page {
   height: calc(100vh - 122px);
   width: 100%;
@@ -136,7 +158,7 @@ a {
 
     @include mq(medium) {
       white-space: normal;
-      font-size: 2em;
+      font-size: 3em;
     }
   }
 
@@ -240,7 +262,7 @@ a {
     line-height: 1.6em;
     font-weight: 500;
     font-size: 0.8em;
-    width: 24vw;
+    width: 28vw;
 
     @include mqh(660px) {
       font-size: 0.7em;
@@ -486,6 +508,10 @@ a {
     margin: 0.4em 0;
   }
 
+  .chart__note-item h4 {
+    font-size: 0.6em;
+  }
+
   .text-body {
     font-size: 0.7em;
     line-height: 1.2;
@@ -493,7 +519,7 @@ a {
 
 
   .text-subtitle {
-    font-size: 1em;
+    font-size: 0.8em;
     margin-top: 1.5em;
     width: 100%;
   }

@@ -23,14 +23,14 @@ function init() {
 
     $('.swiper-slide .effect').removeClass('is-active');
     $('.swiper-slide-active .effect').addClass('is-active');
-    $('body').attr('class', '');
-    $('body').addClass(color);
+    $('.main').attr('class', 'main');
+    $('.main').addClass(color);
     pageLink.removeClass('is-active');
     $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
     playChart();
   });
 
-  $('body').addClass(color);
+  $('.main').addClass(color);
 
   $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
 
@@ -78,7 +78,7 @@ $(document).mousemove(function (event) {
 
 $('body').flowtype({
   fontRatio : 100,
-  minFont : 12,
+  minFont : 14,
   maxFont : 52
 });
 
@@ -100,8 +100,15 @@ $('.close-menu').click(function(e){
   $(this).removeClass('is-active');
 })
 
-if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-   document.getElementsByTagName("BODY")[0].className += " safari";
+var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
+if (isSafari) {
+  document.getElementsByTagName("BODY")[0].className += "safari";
+}
+
+if (isFirefox) {
+  document.getElementsByTagName("BODY")[0].className += "firefox";
 }
 
 pageLink.click(function(){
@@ -111,6 +118,8 @@ pageLink.click(function(){
 
 
 mySwiper = new Swiper('.swiper-container', {
+
+  allowTouchMove: false,
   keyboard: {
     enabled: true,
     onlyInViewport: false

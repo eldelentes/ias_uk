@@ -36,18 +36,20 @@
   }
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: 900;
+
+    @include mq(medium) { font-size: 1em; }
   }
 
   &__number {
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 700;
   }
 
   &__list {
     list-style: none;
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
   }
 
   &__sample {
@@ -61,6 +63,8 @@
     h5 {
       font-weight: 800;
       font-size: 1rem;
+
+      @include mq(medium) { font-size: 0.7em; }
     }
   }
 
