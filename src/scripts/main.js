@@ -6,6 +6,11 @@ var slides;
 var color;
 window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
 
+var ua = window.navigator.userAgent;
+var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+var webkit = !!ua.match(/WebKit/i);
+var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+
 
 function playChart() {
   if ($('.swiper-slide-active .chart').length > 0) {
@@ -103,7 +108,7 @@ $('.close-menu').click(function(e){
 var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
-if (isSafari) {
+if (isSafari || iOSSafari) {
   document.getElementsByTagName("BODY")[0].className += "safari";
 }
 
