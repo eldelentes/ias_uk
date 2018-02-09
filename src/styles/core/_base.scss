@@ -116,11 +116,11 @@ a {
 }
 
 .safari .main {
-  &.overview { background: #ff6251; }
-  &.challenges { background: #c9e3e5; }
-  &.transparency { background: #00d7c5; }
-  &.transacting { background: #637cff; }
-  &.future { background: #ffd726;}
+  &.overview { background: #FF6251; }
+  &.challenges { background: #C9E3E5; }
+  &.transparency { background: #00D7C5; }
+  &.transacting { background: #637CFF; }
+  &.future { background: #FFD725;}
 }
 
 .firefox .main {
@@ -167,16 +167,9 @@ a {
     font-weight: 800;
     line-height: 1.3em;
     display: inline-block;
-    margin-top: 2.5em;
+    margin-top: 5vh;
+    // margin-top: 2.5em;
     width: 28vw;
-
-    // @include mqh(700px) {
-    //   font-size: 1.4em;
-    // }
-
-    // @include mqh(700px) {
-    //   font-size: 1.4em;
-    // }
 
     &--big {
       font-size: 2.2rem;
@@ -243,6 +236,7 @@ a {
 
 .foot-note {
   padding-bottom: 2em;
+
   &__icon {
     width: 2em;
     padding-bottom: 1em;
@@ -258,7 +252,7 @@ a {
     line-height: 1.6em;
     font-weight: 500;
     font-size: 0.8em;
-    width: 28vw;
+    width: 85%;
 
     @include mqh(660px) {
       font-size: 0.7em;
@@ -266,6 +260,14 @@ a {
   }
 }
 
+.column-video div:first-child {
+  min-height: 70vh;
+  display: block;
+
+  @include mqh(660px) {
+    min-height: 60vh;
+  }
+}
 
 .chart-img {
   display: none;
@@ -273,7 +275,6 @@ a {
 
 
 .chart {
-  // width: 100%;
   margin: 0 auto;
   display: block;
   pointer-events: none;
@@ -286,7 +287,7 @@ a {
   }
 
   &__title {
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: center;
     font-weight: 900;
   }
