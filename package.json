@@ -45,7 +45,6 @@
     "swiper": "^4.1.0"
   },
   "dependencies": {
-    "fullpage.js": "^2.9.5",
-    "lottie-web": "^5.1.7"
+    "fullpage.js": "^2.9.5"
   }
 }
