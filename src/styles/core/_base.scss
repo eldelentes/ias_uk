@@ -12,6 +12,7 @@ body {
   font-size: 14px;
   min-height: 100vh;
   font-variant-numeric: lining-nums;
+  background: $color-blue;
 
   @include mq(small) {
     overflow: auto;
@@ -111,26 +112,8 @@ a {
   &.blue-royal { background: $color-blue-royal; }
   &.teal { background: $color-teal; }
   &.yellow { background: $color-yellow; }
-  height: 100vh;
+  height: calc(100vh - 124px);
   width: 100%;
-
-  @include mq(small) {
-    height: calc(100vh - 96px);
-  }
-}
-
-.main {
-  // transform: translateY(50px);
-
-  @include mqh(700px) {
-    // height: 89vh;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  @include mq(medium) {
-    height: auto;
-  }
 }
 
 .text {
@@ -231,33 +214,15 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
 .content {
   display: flex;
-  // align-items: center;
   justify-content: center;
-  // min-height: calc(100vh - 200px);
   min-width: 100vw;
-  // max-height: calc(100vh - 200px);
   max-width: 100vw;
-  height: calc(100vh - 11em);
+  height: 100%;
   position: relative;
-  padding-top: 65px;
-
-  // @include mq(medium) {
-  //   min-height: auto !important;
-  //   height: auto;
-  // }
 }
 
 .foot-note {
-  position: absolute;
-  bottom: 0;
-  padding-bottom: 0.5em;
-  width: 24vw;
-
-
-  // @include mqh(500px) {
-  //   position: static;
-  // }
-
+  padding-bottom: 2em;
   &__icon {
     width: 2em;
     padding-bottom: 1em;
@@ -278,47 +243,32 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     @include mqh(660px) {
       font-size: 0.7em;
     }
-
-    @include mq(medium) {
-      width: 100%;
-    }
   }
 }
 
+
+
 .chart {
-  width: 95%;
+  // width: 100%;
   margin: 0 auto;
   display: block;
   pointer-events: none;
-  max-height: 28em;
   margin: 2em 0;
-
-  @include mqh(760px) {
-    max-height: 23em;
-  }
+  height: 50vh;
+  width: 100%;
 
   &.height {
     max-height: 26em;
-  }
-
-  @include mqh(650px) {
-    max-height: 20em;
   }
 
   &__title {
     font-size: 1.2em;
     text-align: center;
     font-weight: 900;
-    padding-top: 6em;
-
-    @include mqh(700px) {
-      padding-top: 4rem;
-    }
   }
 
   &__note {
     list-style: none;
-    padding: 0.5em 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -605,11 +555,5 @@ body.safari .future-text {
 @media only screen and (max-device-width: 570px) and (orientation: landscape) {
   .foot-note {
     display: none;
-  }
-}
-
-@media only screen and (min-width: 1100px) and (max-height: 900px) {
-  .chart {
-    max-height: 17em;
   }
 }

@@ -17,6 +17,14 @@
     padding-top: 0.35em !important;
     padding-bottom: 0.3em !important;
   }
+
+  &-data-column:nth-of-type(1) {
+    width: 40%;
+  }
+
+  &-data-column:nth-of-type(2) {
+    width: 60%;
+  }
 }
 
 .overview-data {
