@@ -1,14 +1,10 @@
 'use strict';
 
-var flag = false;
 var pageLink = $('.main-header__menu a');
-var counter = 0;
 var mySwiper;
 var slides;
+var color;
 
-$(document).ready(function () {
-  $('.main').load('overview.html');
-});
 
 function playChart() {
   if ($('.swiper-slide-active .chart').length > 0) {
@@ -18,96 +14,37 @@ function playChart() {
 };
 
 function init() {
-  mySwiper = new Swiper('.swiper-container', {
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false
-    }
-  });
-
   $('.swiper-slide-active .effect').addClass('is-active');
+  color = $('.swiper-slide-active').data('section');
+
   mySwiper.on('transitionEnd', function () {
+    color = $('.swiper-slide-active').data('section');
+
+    $('.swiper-slide .effect').removeClass('is-active');
     $('.swiper-slide-active .effect').addClass('is-active');
+    $('body').attr('class', '');
+    $('body').addClass(color);
+    pageLink.removeClass('is-active');
+    $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
     playChart();
   });
 
-  slides = $('.swiper-slide').length - 1;
+  $('body').addClass(color);
+
+  $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
+
+  // slides = $('.swiper-slide').length - 1;
 }
 
 $(document).on("click", function () {
 
-  if ($('body').hasClass('is-right')) {
+  if ($('.content').hasClass('is-right')) {
     mySwiper.slideNext();
-    counter++;
   }
 
-  if ($('body').hasClass('is-left')) {
+  if ($('.content').hasClass('is-left')) {
     mySwiper.slidePrev();
-    counter--;
   }
-  nextPage();
-  prevPage();
-});
-
-function nextPage(index) {
-  if (counter > slides) {
-    loadPage();
-  }
-}
-
-function prevPage(index) {
-
-  if (counter < 0) {
-    returnPage();
-  }
-}
-
-function loadPage() {
-  var nextSection = $('.page').data('section') + 1;
-  if (nextSection == 2) {$('.main').load('challenges.html'); }
-  if (nextSection == 3) {$('.main').load('transparency.html'); }
-  if (nextSection == 4) {$('.main').load('transacting.html'); }
-  if (nextSection == 5) {$('.main').load('future.html'); }
-  if (nextSection == 6) {$('.main').load('about.html'); }
-
-  $(pageLink).removeClass('is-active');
-  // $('.main-header a[id="' + nextSection + '"]').addClass('is-active');
-  counter = 0;
-}
-
-function returnPage() {
-  var currentSection = $('.page').data('section');
-  if (currentSection == 2) { $('.main').load('overview.html'); }
-  if (currentSection == 3) { $('.main').load('challenges.html'); }
-  if (currentSection == 4) { $('.main').load('transparency.html'); }
-  if (currentSection == 5) { $('.main').load('transacting.html'); }
-  if (currentSection == 6) { $('.main').load('future.html'); }
-
-  $(pageLink).removeClass('is-active');
-}
-
-pageLink.click(function () {
-  flag = true;
-  $(pageLink).removeClass('is-active');
-  $(this).addClass('is-active');
-  var currentSection = $(this).data('section'),
-      currentURL = currentSection + '.html';
-  $('.main').load(currentURL);
-});
-
-$(document).ajaxStart(function () {
-  if (flag == true) {
-    mySwiper.destroy();
-  }
-});
-
-$(document).ajaxComplete(function () {
-  init();
-  playChart();
-  mySwiper.update();
-
-  var currentPage = $('.page').data('name');
-  $('.main-header a[data-section="' + currentPage + '"]').addClass('is-active');
 });
 
 
@@ -122,17 +59,17 @@ $(document).mousemove(function (event) {
   var mouseX = event.pageX;
   var mouseY = event.pageY;
   if (mouseX < windowHalf && mouseY > windowTop && mouseY < windowBottom) {
-    $('body').addClass('is-left');
-    $('body').removeClass('is-right');
+    $('.content').addClass('is-left');
+    $('.content').removeClass('is-right');
   } else {
-    $('body').removeClass('is-left');
+    $('.content').removeClass('is-left');
   }
 
   if (mouseX > windowHalf && mouseY > windowTop && mouseY < windowBottom) {
-    $('body').addClass('is-right');
-    $('body').removeClass('is-left');
+    $('.content').addClass('is-right');
+    $('.content').removeClass('is-left');
   } else {
-    $('body').removeClass('is-right');
+    $('.content').removeClass('is-right');
   }
 });
 
@@ -158,3 +95,18 @@ $('.close-menu').click(function(e){
 if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
    document.getElementsByTagName("BODY")[0].className += " safari";
 }
+
+pageLink.click(function(){
+  var slide = $(this).data('slide');
+  mySwiper.slideTo(slide);
+})
+
+
+mySwiper = new Swiper('.swiper-container', {
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false
+  }
+});
+
+init();

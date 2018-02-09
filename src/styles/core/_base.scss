@@ -12,7 +12,7 @@ body {
   font-size: 14px;
   min-height: 100vh;
   font-variant-numeric: lining-nums;
-  background: $color-blue;
+  transition: all 0.1s ease;
 
   @include mq(small) {
     overflow: auto;
@@ -21,6 +21,13 @@ body {
   @include mqh(600px) {
     font-size: 12 !important;
   }
+
+  &.overview,
+  &.about { background: $color-red; }
+  &.challenges { background: $color-blue-light; }
+  &.transacting { background: $color-blue-royal; }
+  &.transparency { background: $color-teal; }
+  &.future { background: $color-yellow; }
 }
 
 img {
@@ -110,13 +117,7 @@ a {
 }
 
 .page {
-  &.red { background: $color-red; }
-  &.blue { background: $color-blue; }
-  &.blue-light { background: $color-blue-light; }
-  &.blue-royal { background: $color-blue-royal; }
-  &.teal { background: $color-teal; }
-  &.yellow { background: $color-yellow; }
-  height: calc(100vh - 124px);
+  height: calc(100vh - 122px);
   width: 100%;
 }
 
@@ -213,8 +214,8 @@ a {
   }
 }
 
-body.is-right { cursor: url(../images/arrow-right.png) 4 12, auto; }
-body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
+.content.is-right { cursor: url(../images/arrow-right.png) 4 12, auto; }
+.content.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
 .content {
   display: flex;
