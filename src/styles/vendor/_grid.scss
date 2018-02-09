@@ -228,6 +228,10 @@
   flex-wrap: wrap;
 }
 
+.row.is-column {
+  flex-direction: column;
+}
+
 .col-md-6 {
   width: 45vw;
 }

@@ -42,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+.future-text {
+  padding-top: 6vh;
+}
+
 .align {
   &-extend {
     display: flex;
@@ -308,6 +312,7 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
 .number-item {
   @extend .align-extend;
+  padding-right: 1em;
 
   &__number {
     @extend .align-center;
@@ -334,10 +339,6 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     font-weight: 700;
     font-size: 1.1em;
   }
-}
-
-body.safari .future-text {
-  margin-top: 1.4rem;
 }
 
 .effect {
