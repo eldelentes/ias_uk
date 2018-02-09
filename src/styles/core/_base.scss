@@ -208,10 +208,6 @@ a {
     font-weight: 500;
     width: 85%;
 
-    @include mq(big) {
-      font-size: 0.8em;
-    }
-
     p {
       margin-bottom: 1rem;
       &.small {
@@ -581,15 +577,17 @@ a {
     width: 55vw;
   }
 
-  .future-text {
-    .number-item p {
-      font-size: 0.7em;
-    }
-  }
+  .future-text .number-item p { font-size: 0.5em; }
 }
 
 @media only screen and (max-device-width: 570px) and (orientation: landscape) {
-  .foot-note {
-    display: none;
+  .overview .text-subtitle--big,
+  .overview .text-title {
+    font-size: 1em;
   }
+
+  .overview-data__title { font-size: 0.5em !important; }
+
+  .overview-data__sample h5 { font-size: 0.4rem !important; }
+  .foot-note { display: none; }
 }
