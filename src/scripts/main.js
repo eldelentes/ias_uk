@@ -154,3 +154,7 @@ $('.close-menu').click(function(e){
   $('.main-header__menu').removeClass('is-active');
   $(this).removeClass('is-active');
 })
+
+if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+   document.getElementsByTagName("BODY")[0].className += " safari";
+}
