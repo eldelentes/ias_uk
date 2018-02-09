@@ -4,6 +4,7 @@ var pageLink = $('.main-header__menu a');
 var mySwiper;
 var slides;
 var color;
+window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
 
 
 function playChart() {
@@ -36,18 +37,19 @@ function init() {
   // slides = $('.swiper-slide').length - 1;
 }
 
-$(document).on("click", function () {
 
-  if ($('.content').hasClass('is-right')) {
-    mySwiper.slideNext();
-  }
+if (!isMobile) {
+  $(document).on("click", function () {
 
-  if ($('.content').hasClass('is-left')) {
-    mySwiper.slidePrev();
-  }
-});
+    if ($('.content').hasClass('is-right')) {
+      mySwiper.slideNext();
+    }
 
-
+    if ($('.content').hasClass('is-left')) {
+      mySwiper.slidePrev();
+    }
+  });
+}
 // Mouse Arrow
 
 var windowTop = 58;
@@ -112,7 +114,11 @@ mySwiper = new Swiper('.swiper-container', {
   keyboard: {
     enabled: true,
     onlyInViewport: false
-  }
+  },
+  navigation: {
+    nextEl: '.swiper-next',
+    prevEl: '.swiper-prev',
+  },
 });
 
 init();

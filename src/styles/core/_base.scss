@@ -424,7 +424,33 @@ a {
 }
 
 
-@media only screen and (max-device-width: 680px) and (orientation: landscape) {
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3em;
+  height: 4em;
+  background: rgba(#000, 0.1);
+  border-radius: 5px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 2em;
+  }
+}
+
+.swiper-next { right: 0.5em; }
+.swiper-prev { left: 0.5em; }
+
+
+@media only screen and (max-device-width: 780px) and (orientation: landscape) {
+
+  .arrow {
+    display: flex;
+  }
+
   .main-footer { padding: 0.4rem 0 !important; }
 
   .page { height: calc(100vh - 56px); }
