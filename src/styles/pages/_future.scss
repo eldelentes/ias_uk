@@ -1,0 +1,35 @@
+.future-text {
+  padding-top: 6vh;
+  display: flex;
+}
+
+.number-item {
+  @extend .align-extend;
+  padding-right: 1em;
+
+  &__number {
+    @extend .align-center;
+    background-color: $color-red;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.2em;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    flex: 0 0 2rem;
+    margin-right: 1rem;
+  }
+
+  & + & {
+    padding-top: 4em;
+
+    @include mqh(600px) {
+      padding-top: 2em;
+    }
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+}

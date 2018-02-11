@@ -1,0 +1,70 @@
+.text {
+  &-underline {
+    box-shadow: inset 0 -8px 0 #fff;
+    padding-bottom: 0.1em;
+
+    @include mq(medium) {
+      box-shadow: inset 0 -3px 0 #fff;
+    }
+  }
+
+  &-title {
+    font-size: 4em;
+    font-weight: 900;
+    display: inline-block;
+    white-space: nowrap;
+
+    @include mq(medium) {
+      white-space: normal;
+      font-size: 3em;
+    }
+  }
+
+  &-subtitle {
+    font-size: 1.6em;
+    font-weight: 800;
+    line-height: 1.3em;
+    display: inline-block;
+    margin-top: 5vh;
+    // margin-top: 2.5em;
+    width: 28vw;
+
+    &--big {
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1em;
+      display: inline-block;
+
+      @include mq(medium) {
+        font-size: 1.2rem;
+      }
+
+      @include mq(big) {
+        font-size: 2.4em;
+      }
+    }
+
+    @include mq(medium) {
+      font-size: 1.2em;
+    }
+
+  }
+
+  &-white { color: #fff; }
+  &-blue { color: $color-blue; }
+
+  &-body {
+    font-size: 1em;
+    line-height: 1.8em;
+    font-weight: 500;
+    width: 85%;
+
+    p {
+      margin-bottom: 1rem;
+      &.small {
+        font-size: 0.9em;
+        margin-bottom: 1em;
+      }
+    }
+  }
+}

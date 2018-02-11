@@ -1,0 +1,38 @@
+.button {
+  text-transform: uppercase;
+  font-weight: 800;
+  transition: all 0.2s ease;
+
+  &.action {
+    color: #fff;
+    background: $color-red;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+
+    &:hover {
+      background: darken($color-red, 20%);
+    }
+
+    @include mq(small) {
+      padding: 0.3rem 1em;
+    }
+  }
+
+  &.white {
+    background: #fff;
+    color: $color-blue;
+    border-radius: 2px;
+    font-size: 0.7em;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+    font-weight: 900;
+  }
+}
+
+.buttons {
+  .button + .button {
+    margin-left: 2rem;
+  }
+}

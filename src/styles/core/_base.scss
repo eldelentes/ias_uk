@@ -38,11 +38,6 @@ a {
   text-decoration: none;
 }
 
-.future-text {
-  padding-top: 6vh;
-  display: flex;
-}
-
 .align {
   &-extend {
     display: flex;
@@ -62,49 +57,8 @@ a {
   }
 }
 
-.button {
-  text-transform: uppercase;
-  font-weight: 800;
-  transition: all 0.2s ease;
 
-  &.action {
-    color: #fff;
-    background: $color-red;
-    padding: 0.4rem 1rem;
-    border-radius: 2px;
-    font-size: 0.7em;
-    letter-spacing: 1px;
-
-    &:hover {
-      background: darken($color-red, 20%);
-    }
-
-    @include mq(small) {
-      padding: 0.3rem 1em;
-    }
-  }
-
-  &.white {
-    background: #fff;
-    color: $color-blue;
-    border-radius: 2px;
-    font-size: 0.7em;
-    padding: 0.5rem 1rem;
-    letter-spacing: 1px;
-    font-weight: 900;
-  }
-}
-
-.buttons {
-  .button + .button {
-    margin-left: 2rem;
-  }
-}
-
-.spacer {
-  height: 1.6em;
-  width: 100%;
-}
+// Page and Browser Adjustments
 
 .main {
   &.overview,
@@ -140,75 +94,24 @@ a {
   width: 100%;
 }
 
-.text {
-  &-underline {
-    box-shadow: inset 0 -8px 0 #fff;
-    padding-bottom: 0.1em;
+.content.is-right { cursor: url(../images/arrow-right.png) 4 12, auto; }
+.content.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
 
-    @include mq(medium) {
-      box-shadow: inset 0 -3px 0 #fff;
-    }
-  }
+.content {
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  max-width: 100vw;
+  height: 100%;
+  position: relative;
+}
 
-  &-title {
-    font-size: 4em;
-    font-weight: 900;
-    display: inline-block;
-    white-space: nowrap;
 
-    @include mq(medium) {
-      white-space: normal;
-      font-size: 3em;
-    }
-  }
+// Items to add spaces between elements and strips.
 
-  &-subtitle {
-    font-size: 1.6em;
-    font-weight: 800;
-    line-height: 1.3em;
-    display: inline-block;
-    margin-top: 5vh;
-    // margin-top: 2.5em;
-    width: 28vw;
-
-    &--big {
-      font-size: 2.2rem;
-      font-weight: 900;
-      line-height: 1em;
-      display: inline-block;
-
-      @include mq(medium) {
-        font-size: 1.2rem;
-      }
-
-      @include mq(big) {
-        font-size: 2.4em;
-      }
-    }
-
-    @include mq(medium) {
-      font-size: 1.2em;
-    }
-
-  }
-
-  &-white { color: #fff; }
-  &-blue { color: $color-blue; }
-
-  &-body {
-    font-size: 1em;
-    line-height: 1.8em;
-    font-weight: 500;
-    width: 85%;
-
-    p {
-      margin-bottom: 1rem;
-      &.small {
-        font-size: 0.9em;
-        margin-bottom: 1em;
-      }
-    }
-  }
+.spacer {
+  height: 1.6em;
+  width: 100%;
 }
 
 .strip {
@@ -220,18 +123,6 @@ a {
   &.blue {
     background: $color-blue;
   }
-}
-
-.content.is-right { cursor: url(../images/arrow-right.png) 4 12, auto; }
-.content.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
-
-.content {
-  display: flex;
-  justify-content: center;
-  min-width: 100vw;
-  max-width: 100vw;
-  height: 100%;
-  position: relative;
 }
 
 .foot-note {
@@ -269,98 +160,7 @@ a {
   }
 }
 
-.chart-img {
-  display: none;
-}
-
-
-.chart {
-  margin: 0 auto;
-  display: block;
-  pointer-events: none;
-  margin: 2em 0;
-  height: 50vh;
-  width: 100%;
-
-  &.height {
-    max-height: 26em;
-  }
-
-  &__title {
-    font-size: 1em;
-    text-align: center;
-    font-weight: 900;
-  }
-
-  &__note {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  &__note-item {
-    display: flex;
-    align-items: center;
-
-    & + & {
-      margin-left: 1rem;
-    }
-
-    h4 {
-      font-weight: 800;
-    }
-  }
-
-  &__note .circle {
-    width: 0.5rem;
-    height: 0.5rem;
-    display: inline-block;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-
-    &.red { background-color: $color-red; }
-    &.red-dark { background-color: $color-red-dark; }
-    &.blue { background-color: $color-blue; }
-    &.white { background-color: #fff; }
-    &.blue-royal { background-color: $color-blue-royal; }
-    &.teal { background-color: $color-teal; }
-    &.yellow { background-color: $color-yellow; }
-  }
-}
-
-.number-item {
-  @extend .align-extend;
-  padding-right: 1em;
-
-  &__number {
-    @extend .align-center;
-    background-color: $color-red;
-    color: #fff;
-    font-weight: 800;
-    font-size: 1.2em;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    flex: 0 0 2rem;
-    margin-right: 1rem;
-  }
-
-  & + & {
-    padding-top: 4em;
-
-    @include mqh(600px) {
-      padding-top: 2em;
-    }
-  }
-
-  p {
-    font-weight: 700;
-    font-size: 1.1em;
-  }
-}
+// Show Effects
 
 .effect {
   &-reveal {
@@ -397,194 +197,4 @@ a {
   to {
     opacity: 1;
   }
-}
-
-@media only screen and (max-device-width: 680px) and (orientation: portrait) {
-  .overview .mobile .text-subtitle--big {
-    font-size: 2rem;
-    padding-top: 0 !important;
-  }
-
-  .overview .mobile .text-title {
-   font-size: 2rem;
-  }
-
-  .overview .mobile .spacer {
-    display: none;
-  }
-
-  .overview-img {
-    width: 100%;
-
-    img {
-      height: 25vh !important;
-      padding-top: 2em;
-    }
-  }
-
-  .responsive-mask {
-    display: flex !important;
-  }
-}
-
-.responsive-mask {
-  background: rgba($color-blue, 1);
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  z-index: 100;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: none;
-
-  img {
-    width: 80%;
-  }
-}
-
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3em;
-  height: 4em;
-  background: rgba(#000, 0.1);
-  border-radius: 5px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 99;
-
-  img {
-    height: 2em;
-  }
-}
-
-.swiper-button-disabled {
-  opacity: 0;
-}
-
-.swiper-next { right: 0.5em; }
-.swiper-prev { left: 0.5em; }
-
-
-@media only screen and (max-device-width: 780px) and (orientation: landscape) {
-
-  .arrow {
-    display: flex;
-  }
-
-  .main-footer { padding: 0.4rem 0 !important; }
-
-  .page { height: calc(100vh - 56px); }
-
-  .spacer { height: 0.4em; }
-
-  .overview .text-title { font-size: 2em; }
-  .overview .text-subtitle--big { font-size: 1.6em; }
-
-  .overview-data__number,
-  .overview-data__sample h5 {
-    font-size: 0.5rem !important;
-  }
-
-  .overview-data__title { font-size: 0.7rem !important; }
-
-  .overview-data__sample { padding-top: 6px !important; }
-
-  .overview-data .circle {
-    padding: 0.2rem !important;
-    margin-right: 0.3rem !important;
-  }
-
-  .overview-data { padding-left: 1rem; }
-
-  .chart {
-    display: none;
-  }
-
-  .chart-img {
-    display: block;
-    height: 15em;
-    width: 100%;
-    margin: 0.4em 0;
-  }
-
-  .chart__note-item h4 {
-    font-size: 0.6em;
-  }
-
-  .text-body {
-    font-size: 0.7em;
-    line-height: 1.2;
-  }
-
-
-  .text-subtitle {
-    font-size: 0.8em;
-    margin-top: 1.5em;
-    width: 100%;
-  }
-
-  .strip {
-    margin-top: 0.6em;
-    height: 2px;
-    width: 25px;
-    margin-bottom: 1em;
-  }
-
-  .foot-note__icon {
-    width: 1rem;
-  }
-
-  .foot-note {
-    width: 30vw;
-    bottom: 80px;
-  }
-
-  .chart__title {
-    font-size: 0.7em;
-    padding-top: 10vh;
-  }
-
-  .foot-note p {
-    line-height: 1.3em;
-    font-weight: 500;
-    font-size: 0.6em;
-  }
-
-  .main-header {
-    padding: 0.4em 0 !important;
-  }
-
-  .main-header__brand {
-    width: 80px !important;
-  }
-
-  .col-md-6 {
-    width: 50vw;
-  }
-
-  .col-md-4 {
-    width: 45vw;
-  }
-
-  .future-text .number-item p { font-size: 0.5em; }
-}
-
-@media only screen and (max-device-width: 570px) and (orientation: landscape) {
-  .overview .text-subtitle--big,
-  .overview .text-title {
-    font-size: 1em;
-  }
-
-  .overview-data__title { font-size: 0.5em !important; }
-
-  .overview-data__sample h5 { font-size: 0.4rem !important; }
-  .foot-note { display: none; }
 }
