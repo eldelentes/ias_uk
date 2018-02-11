@@ -9,18 +9,30 @@ block content
         .main-header__brand
           img.logo(src="images/logo.svg")
         nav.main-header__menu
-          a.is-active(href="#", id="1" ,data-section="overview") Overview
-          a(href="javascript:;", id="2" ,data-section="challenges") Challenges
-          a(href="javascript:;", id="3" ,data-section="transparency") Transparency
-          a(href="javascript:;", id="4" ,data-section="transacting") Transacting
-          a(href="javascript:;", id="5" ,data-section="future") The Future
-          a(href="javascript:;", id="6" ,data-section="about") About
+          a(href="#", data-section="overview", data-slide="0") Overview
+          a(href="javascript:;", data-section="challenges", data-slide="2") Challenges
+          a(href="javascript:;", data-section="transparency", data-slide="9" ) Transparency
+          a(href="javascript:;", data-section="transacting", data-slide="12") Transacting
+          a(href="javascript:;", data-section="future", data-slide="16" ) The Future
+          a(href="javascript:;", data-section="about", data-slide="20") About
           a.button.action(href="images/IAS_Web_Enero_30_PDF.pdf", target="_blank") Download Full Report
         nav.mobile-nav
           a.button.action(href="images/IAS_Web_Enero_30_PDF.pdf", target="_blank") Download Full Report
           a.toggle
             img.logo(src="images/toggle.svg")
   main.main
+    .page.overview.swiper-container
+      .arrow.swiper-prev
+        img.logo(src="images/arrow-left.png")
+      .arrow.swiper-next
+        img.logo(src="images/arrow-right.png")
+      .swiper-wrapper
+        include overview.pug
+        include challenges.pug
+        include transparency.pug
+        include transacting.pug
+        include future.pug
+        include about.pug
   .responsive-mask
     img(src="images/mobile.svg")
   footer.main-footer

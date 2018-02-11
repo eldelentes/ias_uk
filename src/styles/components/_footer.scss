@@ -2,26 +2,9 @@
   background: $color-blue;
   padding: 1.5rem 0;
   color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-
-  @include mqh(500px) {
-    position: relative;
-  }
-
-  @include mq(small) {
-    position: relative;
-  }
 
   &__container {
     @extend .align-extend;
-
-    @include mq(small) {
-      flex-direction: column;
-    }
   }
 
   &__content {
@@ -46,10 +29,6 @@
   }
 
   &__social {
-    @include mq(small) {
-      padding-top: 1rem;
-    }
-
     a {
       color: #fff;
     }

@@ -1,0 +1,60 @@
+.chart {
+  margin: 0 auto;
+  display: block;
+  pointer-events: none;
+  margin: 2em 0;
+  height: 50vh;
+  width: 100%;
+
+  &.height {
+    max-height: 26em;
+  }
+
+  &__title {
+    font-size: 1em;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  &__note {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__note-item {
+    display: flex;
+    align-items: center;
+
+    & + & {
+      margin-left: 1rem;
+    }
+
+    h4 {
+      font-weight: 800;
+    }
+  }
+
+  &__note .circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+
+    &.red { background-color: $color-red; }
+    &.red-dark { background-color: $color-red-dark; }
+    &.blue { background-color: $color-blue; }
+    &.white { background-color: #fff; }
+    &.blue-royal { background-color: $color-blue-royal; }
+    &.teal { background-color: $color-teal; }
+    &.yellow { background-color: $color-yellow; }
+  }
+
+  &-img {
+    display: none;
+  }
+}

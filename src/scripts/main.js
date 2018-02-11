@@ -1,14 +1,16 @@
 'use strict';
 
-var flag = false;
 var pageLink = $('.main-header__menu a');
-var counter = 0;
 var mySwiper;
 var slides;
+var color;
+window.isMobile = /iphone|ipod|ipad|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase());
 
-$(document).ready(function () {
-  $('.main').load('overview.html');
-});
+var ua = window.navigator.userAgent;
+var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+var webkit = !!ua.match(/WebKit/i);
+var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+
 
 function playChart() {
   if ($('.swiper-slide-active .chart').length > 0) {
@@ -18,99 +20,41 @@ function playChart() {
 };
 
 function init() {
-  mySwiper = new Swiper('.swiper-container', {
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false
-    }
-  });
-
   $('.swiper-slide-active .effect').addClass('is-active');
+  color = $('.swiper-slide-active').data('section');
+
   mySwiper.on('transitionEnd', function () {
+    color = $('.swiper-slide-active').data('section');
+
+    $('.swiper-slide .effect').removeClass('is-active');
     $('.swiper-slide-active .effect').addClass('is-active');
+    $('.main').attr('class', 'main');
+    $('.main').addClass(color);
+    pageLink.removeClass('is-active');
+    $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
     playChart();
   });
 
-  slides = $('.swiper-slide').length - 1;
+  $('.main').addClass(color);
+
+  $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
+
+  // slides = $('.swiper-slide').length - 1;
 }
 
-$(document).on("click", function () {
 
-  if ($('body').hasClass('is-right')) {
-    mySwiper.slideNext();
-    counter++;
-  }
+if (!isMobile) {
+  $(document).on("click", function () {
 
-  if ($('body').hasClass('is-left')) {
-    mySwiper.slidePrev();
-    counter--;
-  }
-  nextPage();
-  prevPage();
-});
+    if ($('.content').hasClass('is-right')) {
+      mySwiper.slideNext();
+    }
 
-function nextPage(index) {
-  if (counter > slides) {
-    loadPage();
-  }
+    if ($('.content').hasClass('is-left')) {
+      mySwiper.slidePrev();
+    }
+  });
 }
-
-function prevPage(index) {
-
-  if (counter < 0) {
-    returnPage();
-  }
-}
-
-function loadPage() {
-  var nextSection = $('.page').data('section') + 1;
-  if (nextSection == 2) {$('.main').load('challenges.html'); }
-  if (nextSection == 3) {$('.main').load('transparency.html'); }
-  if (nextSection == 4) {$('.main').load('transacting.html'); }
-  if (nextSection == 5) {$('.main').load('future.html'); }
-  if (nextSection == 6) {$('.main').load('about.html'); }
-
-  $(pageLink).removeClass('is-active');
-  // $('.main-header a[id="' + nextSection + '"]').addClass('is-active');
-  counter = 0;
-}
-
-function returnPage() {
-  var currentSection = $('.page').data('section');
-  if (currentSection == 2) { $('.main').load('overview.html'); }
-  if (currentSection == 3) { $('.main').load('challenges.html'); }
-  if (currentSection == 4) { $('.main').load('transparency.html'); }
-  if (currentSection == 5) { $('.main').load('transacting.html'); }
-  if (currentSection == 6) { $('.main').load('future.html'); }
-
-  $(pageLink).removeClass('is-active');
-}
-
-pageLink.click(function () {
-  flag = true;
-  $(pageLink).removeClass('is-active');
-  $(this).addClass('is-active');
-  var currentSection = $(this).data('section'),
-      currentURL = currentSection + '.html';
-  $('.main').load(currentURL);
-});
-
-$(document).ajaxStart(function () {
-  if (flag == true) {
-    mySwiper.destroy();
-  }
-});
-
-$(document).ajaxComplete(function () {
-  init();
-  playChart();
-  mySwiper.update();
-
-  var currentPage = $('.page').data('name');
-  $('.main-header a[data-section="' + currentPage + '"]').addClass('is-active');
-});
-
-
 // Mouse Arrow
 
 var windowTop = 58;
@@ -122,39 +66,73 @@ $(document).mousemove(function (event) {
   var mouseX = event.pageX;
   var mouseY = event.pageY;
   if (mouseX < windowHalf && mouseY > windowTop && mouseY < windowBottom) {
-    $('body').addClass('is-left');
-    $('body').removeClass('is-right');
+    $('.content').addClass('is-left');
+    $('.content').removeClass('is-right');
   } else {
-    $('body').removeClass('is-left');
+    $('.content').removeClass('is-left');
   }
 
   if (mouseX > windowHalf && mouseY > windowTop && mouseY < windowBottom) {
-    $('body').addClass('is-right');
-    $('body').removeClass('is-left');
+    $('.content').addClass('is-right');
+    $('.content').removeClass('is-left');
   } else {
-    $('body').removeClass('is-right');
+    $('.content').removeClass('is-right');
   }
 });
 
 
 $('body').flowtype({
   fontRatio : 100,
-  minFont : 12,
+  minFont : 14,
   maxFont : 52
 });
 
 $('.toggle').click(function(e){
   e.preventDefault;
-  $('.main-header__menu').addClass('is-active');
+  $('.main-header__menu').addClass('is-responsive');
   $('.close-menu').addClass('is-active');
+})
+
+pageLink.click(function(e){
+  console.log("log");
+  $('.main-header__menu').removeClass('is-responsive');
+  $('.close-menu').removeClass('is-active');
 })
 
 $('.close-menu').click(function(e){
   e.preventDefault;
-  $('.main-header__menu').removeClass('is-active');
+  $('.main-header__menu').removeClass('is-responsive');
   $(this).removeClass('is-active');
 })
 
-if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-   document.getElementsByTagName("BODY")[0].className += " safari";
+var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
+if (isSafari || iOSSafari) {
+  document.getElementsByTagName("BODY")[0].className += "safari";
 }
+
+if (isFirefox) {
+  document.getElementsByTagName("BODY")[0].className += "firefox";
+}
+
+pageLink.click(function(){
+  var slide = $(this).data('slide');
+  mySwiper.slideTo(slide);
+})
+
+
+mySwiper = new Swiper('.swiper-container', {
+
+  allowTouchMove: false,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false
+  },
+  navigation: {
+    nextEl: '.swiper-next',
+    prevEl: '.swiper-prev',
+  },
+});
+
+init();

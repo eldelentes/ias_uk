@@ -12,6 +12,7 @@ body {
   font-size: 14px;
   min-height: 100vh;
   font-variant-numeric: lining-nums;
+  transition: all 0.1s ease;
 
   @include mq(small) {
     overflow: auto;
@@ -29,10 +30,6 @@ img {
 .container {
   width: 90vw;
   margin: 0 auto;
-
-}
-
-.container .row:first-child {
   height: 100%;
 }
 
@@ -60,159 +57,61 @@ a {
   }
 }
 
-.button {
-  text-transform: uppercase;
-  font-weight: 800;
-  transition: all 0.2s ease;
 
-  &.action {
-    color: #fff;
-    background: $color-red;
-    padding: 0.4rem 1rem;
-    border-radius: 2px;
-    font-size: 0.7em;
-    letter-spacing: 1px;
+// Page and Browser Adjustments
 
-    &:hover {
-      background: darken($color-red, 20%);
-    }
-
-    @include mq(small) {
-      padding: 0.3rem 1em;
-    }
-  }
-
-  &.white {
-    background: #fff;
-    color: $color-blue;
-    border-radius: 2px;
-    font-size: 0.7em;
-    padding: 0.5rem 1rem;
-    letter-spacing: 1px;
-    font-weight: 900;
-  }
+.main {
+  &.overview,
+  &.about { background: $color-red; }
+  &.challenges { background: $color-blue-light; }
+  &.transacting { background: $color-blue-royal; }
+  &.transparency { background: $color-teal; }
+  &.future { background: $color-yellow; }
 }
 
-.buttons {
-  .button + .button {
-    margin-left: 2rem;
-  }
+.safari .main {
+  &.overview { background: #FF6251; }
+  &.challenges { background: #C9E3E5; }
+  &.transparency { background: #00D7C5; }
+  &.transacting { background: #637CFF; }
+  &.future { background: #FFD725;}
 }
+
+.firefox .main {
+  &.overview { background: #fb4147; }
+  &.challenges { background: #cde9e6; }
+  &.transparency { background: #07f1c5; }
+  &.transacting { background: #5865ff; }
+  &.future { background: #ffe12b;}
+}
+
+.firefox .chart {
+  filter: contrast(110%);
+}
+
+.page {
+  height: calc(100vh - 122px);
+  width: 100%;
+}
+
+.content.is-right { cursor: url(../images/arrow-right.png) 4 12, auto; }
+.content.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
+
+.content {
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  max-width: 100vw;
+  height: 100%;
+  position: relative;
+}
+
+
+// Items to add spaces between elements and strips.
 
 .spacer {
   height: 1.6em;
   width: 100%;
-}
-
-.page {
-  &.red { background: $color-red; }
-  &.blue { background: $color-blue; }
-  &.blue-light { background: $color-blue-light; }
-  &.blue-royal { background: $color-blue-royal; }
-  &.teal { background: $color-teal; }
-  &.yellow { background: $color-yellow; }
-  height: 100vh;
-  width: 100%;
-
-  @include mq(small) {
-    height: calc(100vh - 96px);
-  }
-}
-
-.main {
-  // transform: translateY(50px);
-
-  @include mqh(700px) {
-    // height: 89vh;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  @include mq(medium) {
-    height: auto;
-  }
-}
-
-.text {
-  &-underline {
-    box-shadow: inset 0 -8px 0 #fff;
-    padding-bottom: 0.1em;
-
-    @include mq(medium) {
-      box-shadow: inset 0 -3px 0 #fff;
-    }
-  }
-
-  &-title {
-    font-size: 4em;
-    font-weight: 900;
-    display: inline-block;
-    white-space: nowrap;
-
-    @include mq(medium) {
-      white-space: normal;
-      font-size: 2em;
-    }
-  }
-
-  &-subtitle {
-    font-size: 1.6em;
-    font-weight: 800;
-    line-height: 1.3em;
-    display: inline-block;
-    margin-top: 2.5em;
-    width: 28vw;
-
-    // @include mqh(700px) {
-    //   font-size: 1.4em;
-    // }
-
-    // @include mqh(700px) {
-    //   font-size: 1.4em;
-    // }
-
-    &--big {
-      font-size: 2.2rem;
-      font-weight: 900;
-      line-height: 1em;
-      display: inline-block;
-
-      @include mq(medium) {
-        font-size: 1.2rem;
-      }
-
-      @include mq(big) {
-        font-size: 2.4em;
-      }
-    }
-
-    @include mq(medium) {
-      font-size: 1.2em;
-    }
-
-  }
-
-  &-white { color: #fff; }
-  &-blue { color: $color-blue; }
-
-  &-body {
-    font-size: 0.9em;
-    line-height: 1.8em;
-    font-weight: 500;
-    width: 85%;
-
-    @include mq(big) {
-      font-size: 0.8em;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      &.small {
-        font-size: 0.9em;
-        margin-bottom: 1em;
-      }
-    }
-  }
 }
 
 .strip {
@@ -226,37 +125,8 @@ a {
   }
 }
 
-body.is-right { cursor: url(../images/arrow-right.png) 4 12, auto; }
-body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
-
-.content {
-  display: flex;
-  // align-items: center;
-  justify-content: center;
-  // min-height: calc(100vh - 200px);
-  min-width: 100vw;
-  // max-height: calc(100vh - 200px);
-  max-width: 100vw;
-  height: calc(100vh - 11em);
-  position: relative;
-  padding-top: 65px;
-
-  // @include mq(medium) {
-  //   min-height: auto !important;
-  //   height: auto;
-  // }
-}
-
 .foot-note {
-  position: absolute;
-  bottom: 0;
-  padding-bottom: 0.5em;
-  width: 24vw;
-
-
-  // @include mqh(500px) {
-  //   position: static;
-  // }
+  padding-bottom: 2em;
 
   &__icon {
     width: 2em;
@@ -273,122 +143,24 @@ body.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
     line-height: 1.6em;
     font-weight: 500;
     font-size: 0.8em;
-    width: 24vw;
+    width: 85%;
 
     @include mqh(660px) {
       font-size: 0.7em;
     }
-
-    @include mq(medium) {
-      width: 100%;
-    }
   }
 }
 
-.chart {
-  width: 95%;
-  margin: 0 auto;
+.column-video div:first-child {
+  min-height: 70vh;
   display: block;
-  pointer-events: none;
-  max-height: 28em;
-  margin: 2em 0;
 
-  @include mqh(760px) {
-    max-height: 23em;
-  }
-
-  &.height {
-    max-height: 26em;
-  }
-
-  @include mqh(650px) {
-    max-height: 20em;
-  }
-
-  &__title {
-    font-size: 1.2em;
-    text-align: center;
-    font-weight: 900;
-    padding-top: 6em;
-
-    @include mqh(700px) {
-      padding-top: 4rem;
-    }
-  }
-
-  &__note {
-    list-style: none;
-    padding: 0.5em 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  &__note-item {
-    display: flex;
-    align-items: center;
-
-    & + & {
-      margin-left: 1rem;
-    }
-
-    h4 {
-      font-weight: 800;
-    }
-  }
-
-  &__note .circle {
-    width: 0.5rem;
-    height: 0.5rem;
-    display: inline-block;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-
-    &.red { background-color: $color-red; }
-    &.red-dark { background-color: $color-red-dark; }
-    &.blue { background-color: $color-blue; }
-    &.white { background-color: #fff; }
-    &.blue-royal { background-color: $color-blue-royal; }
-    &.teal { background-color: $color-teal; }
-    &.yellow { background-color: $color-yellow; }
+  @include mqh(660px) {
+    min-height: 60vh;
   }
 }
 
-.number-item {
-  @extend .align-extend;
-
-  &__number {
-    @extend .align-center;
-    background-color: $color-red;
-    color: #fff;
-    font-weight: 800;
-    font-size: 1.2em;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    flex: 0 0 2rem;
-    margin-right: 1rem;
-  }
-
-  & + & {
-    padding-top: 4em;
-
-    @include mqh(600px) {
-      padding-top: 2em;
-    }
-  }
-
-  p {
-    font-weight: 700;
-    font-size: 1.1em;
-  }
-}
-
-body.safari .future-text {
-  margin-top: 1.4rem;
-}
+// Show Effects
 
 .effect {
   &-reveal {
@@ -424,192 +196,5 @@ body.safari .future-text {
 @keyframes fadeIn {
   to {
     opacity: 1;
-  }
-}
-
-@media only screen and (max-device-width: 680px) and (orientation: portrait) {
-  .overview .mobile .text-subtitle--big {
-    font-size: 2rem;
-    padding-top: 0 !important;
-  }
-
-  .overview .mobile .text-title {
-   font-size: 2rem;
-  }
-
-  .overview .mobile .spacer {
-    display: none;
-  }
-
-  .overview-img {
-    width: 100%;
-
-    img {
-      height: 25vh !important;
-      padding-top: 2em;
-    }
-  }
-
-  .responsive-mask {
-    display: flex !important;
-  }
-}
-
-.responsive-mask {
-  background: rgba($color-blue, 0.9);
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  z-index: 100;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: none;
-
-  img {
-    width: 80%;
-  }
-}
-
-
-@media only screen and (max-device-width: 680px) and (orientation: landscape) {
-  .main-footer {
-    position: absolute !important;
-    padding: 0.4rem 0 !important;
-  }
-
-  .main-footer__container {
-    flex-direction: row !important;
-  }
-
-  .page {
-    height: 100vh;
-  }
-
-  .main-footer__social {
-    padding: 0 !important;
-  }
-
-  .row {
-    flex-wrap: nowrap !important;
-  }
-
-  .spacer {
-    height: 0.4em;
-  }
-
-  .overview .text-subtitle--big {
-    font-size: 1.6em;
-  }
-
-  .overview-data__number,
-  .overview-data__sample h5 {
-    font-size: 0.5rem !important;
-  }
-
-  .overview-data__title {
-   font-size: 0.7rem !important;
-  }
-
-  .overview-data__sample {
-    padding-top: 6px !important;
-  }
-
-  .overview-data .circle {
-    padding: 0.2rem !important;
-    margin-right: 0.3rem !important;
-  }
-
-  .overview-data {
-    padding-left: 1rem;
-  }
-
-  .chart {
-    height: 15em;
-    width: 100%;
-  }
-
-  .text-body {
-    font-size: 0.7em;
-    line-height: 1.2;
-  }
-
-
-  .text-subtitle {
-    font-size: 1em;
-    margin-top: 1.5em;
-    width: 100%;
-  }
-
-  .strip {
-    margin-top: 0.6em;
-    height: 2px;
-    width: 25px;
-    margin-bottom: 1em;
-  }
-
-  .foot-note__icon {
-    width: 1rem;
-  }
-
-  .foot-note {
-    width: 30vw;
-    position: absolute !important;
-    bottom: 80px;
-  }
-
-  .chart__title {
-    font-size: 0.7em;
-    padding-top: 10vh;
-  }
-
-  .foot-note p {
-    line-height: 1.3em;
-    font-weight: 500;
-    font-size: 0.6em;
-  }
-
-  .chart {
-    margin: 0.4em 0;
-  }
-
-  .content {
-    height: 100vh !important;
-    padding-top: 34px;
-  }
-
-  .main-header {
-    padding: 0.4em 0 !important;
-  }
-
-  .main-header__brand {
-    width: 80px;
-  }
-
-  .col-md-6 {
-    width: 50vw;
-  }
-
-  .col-md-4 {
-    width: 45vw;
-  }
-
-  .col-md-8:not(.text-body) {
-    width: 55vw;
-  }
-}
-
-@media only screen and (max-device-width: 570px) and (orientation: landscape) {
-  .foot-note {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 1100px) and (max-height: 900px) {
-  .chart {
-    max-height: 17em;
   }
 }

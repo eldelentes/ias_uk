@@ -21,5 +21,20 @@
 @import "components/header";
 @import "components/footer";
 @import "components/country-selector";
+@import "components/buttons";
+@import "components/typography";
+@import "components/chart";
+
+//
+// Pages
+// --------------------------------------------------
 
 @import "pages/overview";
+@import "pages/future";
+
+
+//
+// Responsive
+// --------------------------------------------------
+
+@import "core/responsive";
