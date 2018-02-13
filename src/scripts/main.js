@@ -38,8 +38,6 @@ function init() {
   $('.main').addClass(color);
 
   $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
-
-  // slides = $('.swiper-slide').length - 1;
 }
 
 
@@ -94,7 +92,6 @@ $('.toggle').click(function(e){
 })
 
 pageLink.click(function(e){
-  console.log("log");
   $('.main-header__menu').removeClass('is-responsive');
   $('.close-menu').removeClass('is-active');
 })
@@ -119,6 +116,10 @@ if (isFirefox) {
 pageLink.click(function(){
   var slide = $(this).data('slide');
   mySwiper.slideTo(slide);
+})
+
+$('.main-header__brand').click(function(){
+  mySwiper.slideTo(0);
 })
 
 
