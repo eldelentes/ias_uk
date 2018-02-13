@@ -109,9 +109,9 @@
 
   .chart-img {
     display: block;
-    height: 15em;
+    max-height: 10em;
     width: 100%;
-    margin: 0.4em 0;
+    margin: 1em 0;
   }
 
   .chart__note-item h4 {
