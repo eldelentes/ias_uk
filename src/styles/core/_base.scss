@@ -94,8 +94,18 @@ a {
   width: 100%;
 }
 
-.content.is-right { cursor: url(../images/arrow-right.png) 4 12, auto; }
-.content.is-left { cursor: url(../images/arrow-left.png) 4 12, auto; }
+.content.is-right {
+  cursor: url(../images/arrow-right.png) 4 12,
+          url(../images/arrow-right.cur),
+          auto;
+}
+
+.content.is-left {
+  cursor: url(../images/arrow-left.png) 4 12,
+          url(../images/arrow-left.cur),
+          auto;
+}
+
 
 .content {
   display: flex;

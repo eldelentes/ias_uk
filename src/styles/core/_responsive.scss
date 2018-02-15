@@ -71,12 +71,12 @@
 .swiper-next { right: 0.5em; }
 .swiper-prev { left: 0.5em; }
 
+@media only screen and (max-device-width: 1366px) and (orientation: landscape) {
+  .arrow { display: flex; }
+}
+
 
 @media only screen and (max-device-width: 780px) and (orientation: landscape) {
-
-  .arrow {
-    display: flex;
-  }
 
   .main-footer { padding: 0.4rem 0 !important; }
 

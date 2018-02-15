@@ -118,13 +118,13 @@ pageLink.click(function(){
   mySwiper.slideTo(slide);
 })
 
-$('.main-header__brand').click(function(){
-  mySwiper.slideTo(0);
-})
+// $('.main-header__brand').click(function(){
+//   mySwiper.slideTo(0);
+// })
 
 
 mySwiper = new Swiper('.swiper-container', {
-
+  speed: 600,
   allowTouchMove: false,
   keyboard: {
     enabled: true,
