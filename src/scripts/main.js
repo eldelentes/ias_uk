@@ -15,6 +15,8 @@ var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
 function playChart() {
   if ($('.swiper-slide-active .chart').length > 0) {
     var chart = $('.swiper-slide-active .chart')[0];
+    chart.pause();
+    chart.currentTime = 0;
     chart.play();
   }
 };
