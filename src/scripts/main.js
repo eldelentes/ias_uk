@@ -139,3 +139,7 @@ mySwiper = new Swiper('.swiper-container', {
 });
 
 init();
+
+/mobile/i.test(navigator.userAgent) && !window.location.hash && setTimeout(function () {
+  window.scrollTo(0, 1);
+}, 500);
