@@ -19,6 +19,13 @@ function playChart() {
     chart.currentTime = 0;
     chart.play();
   }
+
+  if ($('.swiper-slide-active .gif').length > 0) {
+    var gif = $('.swiper-slide-active .gif');
+    var src = gif.attr('src');
+    console.log(src);
+    gif.attr('src', src);
+  }
 };
 
 function init() {

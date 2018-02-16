@@ -2,6 +2,7 @@
   "name": "web-starter-kit",
   "dependencies": {
     "jquery": "^3.1.1",
-    "swiper": "^4.1.0"
+    "swiper": "^4.1.0",
+    "jquery.gifplayer": "^0.3.4"
   }
 }
