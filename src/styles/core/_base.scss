@@ -74,6 +74,8 @@ a {
 // Page and Browser Adjustments
 
 .main {
+  will-change: auto;
+
   &.overview,
   &.about { background: $color-red; }
   &.challenges { background: $color-blue-light; }
@@ -182,6 +184,8 @@ a {
 // Show Effects
 
 .effect {
+  will-change: auto;
+
   &-reveal {
     clip-path: inset(100% 0 0 0);
     transform: translateY(20%);

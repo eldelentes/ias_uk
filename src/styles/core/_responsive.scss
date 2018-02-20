@@ -253,4 +253,16 @@ and (orientation : landscape) {
   .future-text .number-item p {
     font-size: 1.1em;
   }
+
+  .effect {
+    &-reveal {
+      opacity: 0;
+      clip-path: inset(0 0 -10% 0);
+      transform: translateY(0%);
+
+      &.is-active {
+        animation: fadeIn 0.3s forwards cubic-bezier(0.64, 0.57, 0.67, 1.53);
+      }
+    }
+  }
 }
