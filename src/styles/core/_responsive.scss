@@ -249,4 +249,8 @@ and (orientation : landscape) {
     width: 60vw;
     flex-basis: auto;
   }
+
+  .future-text .number-item p {
+    font-size: 1.1em;
+  }
 }
