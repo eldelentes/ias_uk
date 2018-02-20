@@ -31,6 +31,7 @@ function playChart() {
 function init() {
   $('.swiper-slide-active .effect').addClass('is-active');
   color = $('.swiper-slide-active').data('section');
+  playChart();
 
   mySwiper.on('transitionEnd', function () {
     color = $('.swiper-slide-active').data('section');

@@ -18,7 +18,9 @@
               select.country-selector__select
                 option US
         .col-md-8.align-center.overview-img
-          img.effect.effect-reveal(src="images/IAS_01.gif", style="height: 50vh;")
+          img.chart-img.effect.effect-fadeIn.delay(src="images/overview-1.svg")
+          video.chart.effect.effect-show.delay(playsinline autoplay muted, style="height: 65vh;")
+            source(src="images/IAS_01.mp4", type="video/mp4")
 .swiper-slide(data-section="overview")
   .content
     div.container
