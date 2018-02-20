@@ -76,7 +76,11 @@
 }
 
 
-@media only screen and (max-device-width: 780px) and (orientation: landscape) {
+@media only screen and (max-device-width: 890px) and (orientation: landscape) {
+
+  .background-video {
+    display: none !important;
+  }
 
   .main-footer { padding: 0.4rem 0 !important; }
 
@@ -183,4 +187,50 @@
 
   .overview-data__sample h5 { font-size: 0.4rem !important; }
   .foot-note { display: none; }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  .page {
+    height: calc(100vh - 120px);
+    overflow: hidden;
+  }
+
+  .chart-img {
+    max-height: 55vh;
+    margin: 3em 0;
+  }
+
+  .text-subtitle {
+    font-size: 1.3em;
+  }
+
+  .text-body {
+    font-size: 1em;
+  }
+
+  .foot-note__icon {
+    width: 1rem;
+  }
+
+  .foot-note {
+    width: 30vw;
+    bottom: 80px;
+  }
+
+  .chart__title {
+    font-size: 1.1em;
+    padding-top: 10vh;
+  }
+
+  .foot-note p {
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+  .chart__note-item h4 {
+    font-size: 1.2em;
+  }
 }

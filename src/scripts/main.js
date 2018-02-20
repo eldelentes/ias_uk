@@ -42,9 +42,13 @@ function init() {
     pageLink.removeClass('is-active');
     $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
     playChart();
+
+    $('.background-video video').hide();
+    $('.background-video video[data-video="' + color + '"]').show();
   });
 
   $('.main').addClass(color);
+  $('.background-video video[data-video="' + color + '"]').show();
 
   $('.main-header__menu a[data-section="' + color +  '"]').addClass('is-active');
 }

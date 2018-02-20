@@ -2,6 +2,8 @@
   background: $color-blue;
   padding: 1.5rem 0;
   color: #fff;
+  position: relative;
+  z-index: 1;
 
   &__container {
     @extend .align-extend;
