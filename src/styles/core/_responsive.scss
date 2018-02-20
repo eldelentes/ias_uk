@@ -193,14 +193,20 @@
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
+
+  .main-header,
+  .main-footer {
+    padding: 1em 0 !important;
+  }
+
   .page {
     height: calc(100vh - 120px);
     overflow: hidden;
   }
 
   .chart-img {
-    max-height: 55vh;
-    margin: 3em 0;
+    max-height: 45vh;
+    margin: 2em 0;
   }
 
   .text-subtitle {
@@ -222,15 +228,25 @@ and (orientation : landscape) {
 
   .chart__title {
     font-size: 1.1em;
-    padding-top: 10vh;
+    padding-top: 6vh;
   }
 
   .foot-note p {
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 500;
   }
 
   .chart__note-item h4 {
     font-size: 1.2em;
+  }
+
+  .col-md-4 {
+    width: 30vw;
+    flex-basis: auto;
+  }
+
+  .col-md-8 {
+    width: 60vw;
+    flex-basis: auto;
   }
 }
