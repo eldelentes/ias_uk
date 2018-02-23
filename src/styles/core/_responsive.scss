@@ -269,3 +269,9 @@ and (orientation : landscape) {
     }
   }
 }
+
+@media only screen and (max-width: 570px) and (orientation: landscape) {
+  .page {
+    height: calc(100vh - 70px);
+  }
+}
