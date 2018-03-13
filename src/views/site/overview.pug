@@ -10,13 +10,14 @@
             | shape 2018
           .spacer
           .text-body
-            p.text-white We asked professionals from all corners of the digital advertising industry about the challenges they faced in 2017 to learn how those challenges will drive change in 2018.
+            p.text-white After a year of harsh headlines and negative coverage we asked professionals from all corners of the digital advertising industry about the challenges they faced in 2017 to learn how those challenges will drive change in 2018.
             p.text-white We invite you to explore what we discovered...
           .country-selector.align-vertical
             label.country-selector__label COUNTRY:
             .country-selector__dropdown
-              select.country-selector__select
-                option US
+              select.country-selector__select(onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);")
+                option(value="http://google.com") UK
+                option(value="http://google.com") US
         .col-md-8.align-center.overview-img
           img.chart-img.effect.effect-fadeIn.delay(src="images/overview-1.svg")
           video.chart.effect.effect-show.delay(playsinline autoplay muted, style="height: 65vh;")
@@ -37,38 +38,38 @@
             .overview-data-column.text-white.effect.effect-reveal
               .overview-data
                 h4.overview-data__title Dates in field:
-                h5.overview-data__number 12.4.17 – 12.15.17
+                h5.overview-data__number 04.12.17 – 15.12.17
               .overview-data
                 h4.overview-data__title Sample:
-                h5.overview-data__number 816 digital media professionals
+                h5.overview-data__number 332 digital media professionals
               .overview-data
                 h4.overview-data__title Methodology:
-                h5.overview-data__number Online survey of IAS database
+                h5.overview-data__number Online survey
             .overview-data-column.text-white.effect.effect-reveal
               .overview-data
                 h4.overview-data__title Sample breakout:
                 ul.overview-data__list
                   li.overview-data__sample
                     span.circle.teal
-                    h5 Creative / Media / Full Agency
+                    h5 Agency
                   li.overview-data__sample
                     span.circle.blue-royal
                     h5 Publisher
                   li.overview-data__sample
                     span.circle.yellow
-                    h5 Other and Tech Company
+                    h5 Other
                   li.overview-data__sample
                     span.circle.blue-light
-                    h5 Brand / Advertiser
+                    h5 Trading desk
                   li.overview-data__sample.blue
                     span.circle.blue
                     h5 DSP
                   li.overview-data__sample
                     span.circle.soft-yellow
-                    h5 Network or Exchange
+                    h5 Network or exchange
                   li.overview-data__sample
                     span.circle.blue-royal
-                    h5 Trading Desk
+                    h5 Brand
                   li.overview-data__sample
                     span.circle.teal
                     h5 SSP

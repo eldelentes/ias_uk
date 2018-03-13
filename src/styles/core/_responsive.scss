@@ -178,6 +178,13 @@
   }
 
   .future-text .number-item p { font-size: 0.5em; }
+
+  .number-item__number {
+    width: 1rem;
+    height: 1rem;
+    font-size: 10px;
+        flex: 0 0 1rem;
+  }
 }
 
 @media only screen and (max-device-width: 570px) and (orientation: landscape) {
