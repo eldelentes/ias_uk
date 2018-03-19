@@ -1,6 +1,6 @@
 'use strict';
 
-var pageLink = $('.main-header__menu a');
+var pageLink = $('.main-header__menu a.link');
 var mySwiper;
 var slides;
 var color;
@@ -56,7 +56,8 @@ function init() {
 
 
 if (!isMobile) {
-  $(document).on("click", function () {
+  // $(document).on("click", function () {
+    $('#clickCanvas').on("click", function () {
 
     if ($('.content').hasClass('is-right')) {
       mySwiper.slideNext();
@@ -67,6 +68,7 @@ if (!isMobile) {
     }
   });
 }
+
 // Mouse Arrow
 
 var windowTop = 58;

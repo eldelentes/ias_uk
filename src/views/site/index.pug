@@ -9,18 +9,18 @@ block content
         a.main-header__brand(href="https://integralads.com", target="_blank")
           img.logo(src="images/logo.svg")
         nav.main-header__menu
-          a(href="javascript:;", data-section="overview", data-slide="0") Overview
-          a(href="javascript:;", data-section="challenges", data-slide="2") Challenges
-          a(href="javascript:;", data-section="transparency", data-slide="7" ) Transparency
-          a(href="javascript:;", data-section="transacting", data-slide="10") Transacting
-          a(href="javascript:;", data-section="future", data-slide="11" ) The Future
-          a(href="javascript:;", data-section="about", data-slide="14") About
-          a.button.action(href="images/IAS_Web_Enero_30_PDF.pdf", target="_blank") Download Full Report
+          a.link(href="javascript:;", data-section="overview", data-slide="0") Overview
+          a.link(href="javascript:;", data-section="challenges", data-slide="2") Challenges
+          a.link(href="javascript:;", data-section="transparency", data-slide="7" ) Transparency
+          a.link(href="javascript:;", data-section="transacting", data-slide="10") Transacting
+          a.link(href="javascript:;", data-section="future", data-slide="11" ) The Future
+          a.link(href="javascript:;", data-section="about", data-slide="14") About
+          a.link.button.action.downloadOpen(href="images/IAS_Web_Enero_30_PDF.pdf", target="_blank") Download Full Report
         nav.mobile-nav
-          a.button.action(href="images/IAS_Web_Enero_30_PDF.pdf", target="_blank") Download Full Report
+          a.button.action.downloadOpen(href="images/IAS_Web_Enero_30_PDF.pdf", target="_blank") Download Full Report
           a.toggle
             img.logo(src="images/toggle.svg")
-  main.main
+  main.main#clickCanvas
     .page.overview.swiper-container
       .arrow.swiper-prev
         img.logo(src="images/arrow-left.png")
